@@ -1,0 +1,23 @@
+{
+  "name": "calculateyourloans",
+  "version": "1.0.0",
+  "description": "Use a calculator to understand how long it will take to pay off your loans.",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenburgess8/calculateyourloans.git"
+  },
+  "keywords": [
+    "calculator",
+    "loans"
+  ],
+  "author": "Stephen Burgess",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/stephenburgess8/calculateyourloans/issues"
+  },
+  "homepage": "https://github.com/stephenburgess8/calculateyourloans#readme"
+}
