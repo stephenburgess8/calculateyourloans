@@ -1,0 +1,52 @@
+hr {
+	margin-bottom: 10px;
+}
+
+h1 {
+	margin-top: 10px;
+}
+
+.button {
+	float: right;
+}
+
+#nameI {
+	margin-bottom: 0;
+}
+
+#hero {
+	max-width: 100%;
+	margin: auto;
+}
+
+.banner {
+	width: 100%;
+	margin: auto;
+	height: 120px;
+	background-image: url('../images/calc.jpg');
+	background-position:center;
+	background-size: 620px 120px ;
+}
+
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+}
+
+.border {
+	border-style:solid;
+	border-width: 1px;
+	color: darkgray;
+}
+
+.formula {
+	width:100%;
+}
+
+#foot {
+	margin:0 10px 10px;
+	padding: 5px;
+}

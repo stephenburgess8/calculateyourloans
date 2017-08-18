@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Student Loans: The Calculator</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+  	<link href='http://fonts.googleapis.com/css?family=Share:400,400italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Javascript
+	================================================== -->
+ 	<script>
+ 	function calc(e, link) {
+    e.preventDefault();
+
+    var m = 0;
+    var a = 0;
+    var i = 0;
+    var salary = 0;
+    var p = document.getElementById("pI").value;
+    var r = (document.getElementById("rI").value/100);
+    var t = document.getElementById("tI").value;
+    var n = 12;
+
+    var radios6 = document.getElementsByName('radio6');
+    
+    for (var i = 0, length = radios6.length; i < length; i++) {
+        if (radios6[i].checked) {
+            // Grab the value of selected radio button
+            n = radios6[i].value;
+            break;
+        }
+    }
+
+    m = (p*(r/n))/(1-Math.pow((1+r/n), -(n*t)));
+    a = m * (n*t);
+    i = a - p;
+    salary = (m / 0.10) * 12;
+
+    
+    document.getElementById("pO").innerHTML = p;
+    document.getElementById("rO").innerHTML = (r*100).toFixed(1);
+    document.getElementById("tO").innerHTML = t;
+    document.getElementById("nO").innerHTML = n;
+    document.getElementById("mO").innerHTML = m.toFixed(2);
+    document.getElementById("aO").innerHTML = a.toFixed(2);
+    document.getElementById("iO").innerHTML = i.toFixed(2);
+    document.getElementById("sO").innerHTML = salary.toFixed(2);
+
+}
+
+document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+
+		document.getElementById("calculate").addEventListener('click', function(e){calc(e, this)}, false);
+	}
+};
+</script>
+
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+
+</head>
+<body>
+
+
+	<div class="container">
+		<div class="sixteen columns">
+			<h1 class="remove-bottom"><a href="index.html" style="text-decoration:none;">Student Loans: The Basics</a></h1>
+			<h4>The real cost of loans</h4>
+			<hr />
+		</div>
+
+		<div id="contentCol">
+		
+			<div class="two-thirds column" id="content00">
+				<div id="ban" class="banner" alt="Banner" /></div>
+				<br />
+				<h3>Loan Repayment Calculator</h3>
+				<p>
+					Calculate the monthly payment for your own loan, student or otherwise. This will show how much interest you're paying beyond the original amount, and what salary you'll need to pay it off within the time span you'd like. 
+				</p>
+				<!-- Label and text input for P -->
+				<label for="pI">Principal Balance (<b>P</b>)</label>
+				<input type="number" min="0.00" step="1.00" value="24000.00" id="pI" />
+				<label for="rI">Annual Interest Rate (<b>P</b>)</label>
+				<input type="number" min="0.0" max="1.0" step="0.1" value="3.4" id="rI" />
+				<label for="tI">Lifespan of Loan (<b>t</b>)</label>
+				<input type="number" min="1" max="50" step="1" value="5" id="tI" />
+				<label>Compound Frequency (<b>n</b>)</label>
+				<fieldset>
+				    <label for="h1">
+				      <input type="radio" name="radio6" id="h1" value="1" />
+				      <span>Yearly</span>
+				    </label>
+				    <label for="h2">
+				      <input type="radio" name="radio6" id="h2" value="4" />
+				      <span>Quarterly</span>
+				    </label>
+				    <label for="h3">
+				      <input type="radio" name="radio6" id="h3" value="12" />
+				      <span>Monthly</span>
+				    </label>
+				  </fieldset>
+
+				<a href="#" id="calculate" class="button calc">Calculate</a>
+			</div>
+
+		</div>
+
+		<div id="infoCol">
+
+			<div class="one-third column" id="info00">
+				<h4>Loan Repayment Calculator</h4>
+				<img class="formula" src="images/loan.gif" />
+				<ul>
+					<li>
+						<b>Principal </b> : $<span id="pO">0.00</span>
+					</li>
+					<li>
+						<b>Annual Interest Rate</b> : <span id="rO">0.0</span>%
+					</li>
+					<li>
+						<b>Life of Loan</b> : <span id="tO">0</span> Years
+					</li>
+					<li>
+						<b>Compound Frequency</b> : <span id="nO">Monthly</span>
+					</li>
+					<li>
+						<b>Monthly Payment</b> : $<span id="mO">0.00</span>
+					</li>
+					<li>
+						<b>Total Paid</b> : $<span id="aO">0.00</span>
+					</li>
+					<li>
+						<b>Interest Paid</b> : $<span id="iO">0.00</span>
+					</li>
+					<li>
+						<b>Salary Needed</b> : $<span id="sO">0.00</span>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!-- End infoCol -->
+		<br class="clear" />
+        <footer class=" border sixteen columns" id="foot"><a href="about.html">Stephen Burgess (About)</a> © 2014</footer>
+		
+    </div>
+	</div><!-- container -->
+
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
