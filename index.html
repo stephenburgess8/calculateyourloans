@@ -51,8 +51,8 @@
 		<section class="main">
 			<div class="two-thirds column">
 				<div class="banner" alt="Image of Calculator" /></div>
-				<div class="loans">
-					<div class="loan">
+				<div class="loans" id="loans">
+					<div class="loan" id="loan-0">
 						<div class="input-group">
 							<label
 								class="loan-label loan-label-select"
@@ -62,11 +62,11 @@
 								class="loan-input"
 								id="input-0-type"
 							>
-								<option id="type-student-option">Student Loan</option>
-								<option id="type-credit-option">Credit Card</option>
-								<option id="type-mortgage-option">Mortgage</option>
-								<option id="type-auto-option">Auto</option>
-								<option id="type-other-option">Option</option>
+								<option id="option-0-student">Student Loan</option>
+								<option id="option-0-mortgage">Mortgage</option>
+								<option id="option-0-auto">Auto</option>
+								<option id="option-0-credit">Credit Card</option>
+								<option id="option-0-other">Option</option>
 							</select>
 						</div>
 						<div class="input-group">
@@ -80,6 +80,7 @@
 								id="input-0-principal"
 								min="1.00"
 								max="1000000.00"
+								onchange="calc()"
 								step=".01"
 								type="number"
 								value="30000.00"
@@ -95,16 +96,18 @@
 								id="input-0-rate"
 								min="0.10"
 								max="99.99"
+								onchange="calc()"
 								step="0.01"
 								type="number"
 								value="3.8"
 							/>
 							<span class="input-decorator">%</span>
 						</div>
+						<div class="clear"></div>
 					</div>
 				</div>
 				<br class="clear" />
-				<button class="loans-button" id="loans-add-button" disabled>Add a new loan</button> 
+				<button class="loans-button" id="loans-add-button">Add a new loan</button> 
 				<hr>
 				<div class="loans-variables">
 					<div class="input-group">
@@ -211,13 +214,13 @@
 							<b>Total Paid (A)</b> : $<span id="output-total-paid">0.00</span>
 						</li>
 						<li>
-							<b>Annual Percentage Rate (r)</b> : <span id="output-rate">0.0</span>%
+							<b>Weighted APR (r)</b> : <span id="output-rate">0.0</span>%
 						</li>
 						<li>
 							<b>Time to Pay Back (t)</b> : <span id="output-time">0</span> Years
 						</li>
 						<li>
-							<b>Number of Loans</b> : <span id="tO">1</span>
+							<b>Number of Loans</b> : <span id="output-number-loans">1</span>
 						</li>
 					</ul>
 				</div>
