@@ -8,9 +8,9 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Student Loans: The Calculator</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<title>Calculate Your Loans</title>
+	<meta name="description" content="A calculator tool to learn about how long it will take to pay off your loans and how much it will cost.">
+	<meta name="author" content="Prothi LLC">
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -30,54 +30,7 @@
 
 	<!-- Javascript
 	================================================== -->
- 	<script>
- 	function calc(e, link) {
-    e.preventDefault();
-
-    var m = 0;
-    var a = 0;
-    var i = 0;
-    var salary = 0;
-    var p = document.getElementById("pI").value;
-    var r = (document.getElementById("rI").value/100);
-    var t = document.getElementById("tI").value;
-    var n = 12;
-
-    var radios6 = document.getElementsByName('radio6');
-    
-    for (var i = 0, length = radios6.length; i < length; i++) {
-        if (radios6[i].checked) {
-            // Grab the value of selected radio button
-            n = radios6[i].value;
-            break;
-        }
-    }
-
-    m = (p*(r/n))/(1-Math.pow((1+r/n), -(n*t)));
-    a = m * (n*t);
-    i = a - p;
-    salary = (m / 0.10) * 12;
-
-    
-    document.getElementById("pO").innerHTML = p;
-    document.getElementById("rO").innerHTML = (r*100).toFixed(1);
-    document.getElementById("tO").innerHTML = t;
-    document.getElementById("nO").innerHTML = n;
-    document.getElementById("mO").innerHTML = m.toFixed(2);
-    document.getElementById("aO").innerHTML = a.toFixed(2);
-    document.getElementById("iO").innerHTML = i.toFixed(2);
-    document.getElementById("sO").innerHTML = salary.toFixed(2);
-
-}
-
-document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-
-		document.getElementById("calculate").addEventListener('click', function(e){calc(e, this)}, false);
-	}
-};
-</script>
-
+	<script type="text/javascript" src="js/calculator.js" defer></script>
 
 	<!-- Favicons
 	================================================== -->
@@ -85,89 +38,196 @@ document.onreadystatechange = function () {
 
 </head>
 <body>
-
-
 	<div class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom"><a href="index.html" style="text-decoration:none;">Student Loans: The Basics</a></h1>
-			<h4>The real cost of loans</h4>
-			<hr />
+			<header>
+				<a class="header-link" href="index.html">
+					<h1 class="container-header">Calculate Your Loans</h1>
+					<h4 class="container-subheader">The real cost of loans</h4>
+				</a>
+			</header>
 		</div>
 
-		<div id="contentCol">
-		
-			<div class="two-thirds column" id="content00">
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-				<h3>Loan Repayment Calculator</h3>
-				<p>
-					Calculate the monthly payment for your own loan, student or otherwise. This will show how much interest you're paying beyond the original amount, and what salary you'll need to pay it off within the time span you'd like. 
-				</p>
-				<!-- Label and text input for P -->
-				<label for="pI">Principal Balance (<b>P</b>)</label>
-				<input type="number" min="0.00" step="1.00" value="24000.00" id="pI" />
-				<label for="rI">Annual Interest Rate (<b>P</b>)</label>
-				<input type="number" min="0.0" max="1.0" step="0.1" value="3.4" id="rI" />
-				<label for="tI">Lifespan of Loan (<b>t</b>)</label>
-				<input type="number" min="1" max="50" step="1" value="5" id="tI" />
-				<label>Compound Frequency (<b>n</b>)</label>
-				<fieldset>
-				    <label for="h1">
-				      <input type="radio" name="radio6" id="h1" value="1" />
-				      <span>Yearly</span>
-				    </label>
-				    <label for="h2">
-				      <input type="radio" name="radio6" id="h2" value="4" />
-				      <span>Quarterly</span>
-				    </label>
-				    <label for="h3">
-				      <input type="radio" name="radio6" id="h3" value="12" />
-				      <span>Monthly</span>
-				    </label>
-				  </fieldset>
-
-				<a href="#" id="calculate" class="button calc">Calculate</a>
+		<section class="main">
+			<div class="two-thirds column">
+				<div class="banner" alt="Image of Calculator" /></div>
+				<div class="loans">
+					<div class="loan">
+						<div class="input-group">
+							<label
+								class="loan-label loan-label-select"
+								for="input-0-type"
+							>Type</label>
+							<select
+								class="loan-input"
+								id="input-0-type"
+							>
+								<option id="type-student-option">Student Loan</option>
+								<option id="type-credit-option">Credit Card</option>
+								<option id="type-mortgage-option">Mortgage</option>
+								<option id="type-auto-option">Auto</option>
+								<option id="type-other-option">Option</option>
+							</select>
+						</div>
+						<div class="input-group">
+							<label 
+								class="loan-label"
+								for="input-0-principal" 
+							>Principal</label>
+							<span class="input-decorator">$</span>
+							<input
+								class="loan-input"
+								id="input-0-principal"
+								min="1.00"
+								max="1000000.00"
+								step=".01"
+								type="number"
+								value="30000.00"
+							/>
+						</div>
+						<div class="input-group">
+							<label
+								class="loan-label"
+								for="input-0-rate"
+							>at rate</label>
+							<input
+								class="loan-input"
+								id="input-0-rate"
+								min="0.10"
+								max="99.99"
+								step="0.01"
+								type="number"
+								value="3.8"
+							/>
+							<span class="input-decorator">%</span>
+						</div>
+					</div>
+				</div>
+				<br class="clear" />
+				<button class="loans-button" id="loans-add-button" disabled>Add a new loan</button> 
+				<hr>
+				<div class="loans-variables">
+					<div class="input-group">
+						<label
+							class="loan-label"
+							for="input-time"
+						>Time</label>
+						<input
+							class="loan-input"
+							id="input-time"
+							min="1"
+							max="50"
+							step="1"
+							type="number"
+							value="5"
+						/>
+						<span class="input-decorator">Years</span>
+					</div>
+					<div class="input-group">
+						<div class="loans-frequency">
+							<fieldset>
+								<legend class="loan-label">Compounds</legend>
+								<ul class="frequency-radio">
+								    <li class="frequency-option">
+								      <input
+								      	checked
+								      	class="frequency-option-input"
+								      	id="input-frequency-monthly"
+								      	name="frequency"
+								      	type="radio"
+								      	value="12"
+								      />
+								      <label 
+								      	class="frequency-option-label"
+								      	for="input-frequency-monthly"
+								      >Monthly</label>
+								    </li>
+								    <li class="frequency-option">
+								      <input
+								      	class="frequency-option-input"
+								      	id="input-frequency-quarterly"
+								      	name="frequency"
+								      	type="radio"
+								      	value="4"
+								      />
+								      <label
+								      	class="frequency-option-label"
+								      	for="input-frequency-quarterly"
+								      >Quarterly</label>
+								    </li>
+								    <li class="frequency-option">
+								      <input
+								      	class="frequency-option-input"
+								      	id="input-frequency-yearly"
+								      	name="frequency"
+								      	type="radio"
+								      	value="1"
+								      />
+								      <label 
+								      	class="frequency-option-label"
+								      	for="input-frequency-yearly"
+								      >Yearly</label>
+								    </li>
+								</ul>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<button id="loans-calculate-button" class="primary-button">Calculate</button>
+				<button id="loans-clear-button" class="loans-button">Clear</button>
 			</div>
+		</section>
 
-		</div>
-
-		<div id="infoCol">
-
-			<div class="one-third column" id="info00">
-				<h4>Loan Repayment Calculator</h4>
-				<img class="formula" src="images/loan.gif" />
-				<ul>
-					<li>
-						<b>Principal </b> : $<span id="pO">0.00</span>
-					</li>
-					<li>
-						<b>Annual Interest Rate</b> : <span id="rO">0.0</span>%
-					</li>
-					<li>
-						<b>Life of Loan</b> : <span id="tO">0</span> Years
-					</li>
-					<li>
-						<b>Compound Frequency</b> : <span id="nO">Monthly</span>
-					</li>
-					<li>
-						<b>Monthly Payment</b> : $<span id="mO">0.00</span>
-					</li>
-					<li>
-						<b>Total Paid</b> : $<span id="aO">0.00</span>
-					</li>
-					<li>
-						<b>Interest Paid</b> : $<span id="iO">0.00</span>
-					</li>
-					<li>
-						<b>Salary Needed</b> : $<span id="sO">0.00</span>
-					</li>
-				</ul>
-
+		<section class="sidebar">
+			<div class="one-third column">
+				<aside>
+					<h4>Amortization Formula</h4>
+					<figure>
+						<img class="formula" src="images/loan.gif" alt="P*(r/n) / (1-(1+r/n)^-nt)" />
+						<figcaption>P*(r/n) / (1-(1+r/n)^-nt)</figcaption>
+					</figure>
+				</aside>
+				<div class="results">
+					<h3>Results</h3>
+					<ul>
+						<li>
+							<b>Monthly Payment</b> : $<span id="output-monthly">0.00</span>
+						</li>
+						<li>
+							<b>Interest Paid</b> : $<span id="output-interest-paid">0.00</span>
+						</li>
+						<li>
+							<b>15% of Salary</b> : $<span id="output-15-salary">0.00</span>
+						</li>
+						<li>
+							<b>10% of Salary</b> : $<span id="output-10-salary">0.00</span>
+						</li>
+						<hr>
+						<li>
+							<b>Principal (P)</b> : $<span id="output-principal">0.00</span>
+						</li>
+						<li>
+							<b>Total Paid (A)</b> : $<span id="output-total-paid">0.00</span>
+						</li>
+						<li>
+							<b>Annual Percentage Rate (r)</b> : <span id="output-rate">0.0</span>%
+						</li>
+						<li>
+							<b>Time to Pay Back (t)</b> : <span id="output-time">0</span> Years
+						</li>
+						<li>
+							<b>Number of Loans</b> : <span id="tO">1</span>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
+		</section>
 		<!-- End infoCol -->
 		<br class="clear" />
-        <footer class=" border sixteen columns" id="foot"><a href="about.html">Stephen Burgess (About)</a> © 2014</footer>
+        <footer class="border sixteen columns footer">
+        	<a href="about.html">About</a> (<a href="https://spdx.org/licenses/GPL-3.0.html">GNU-3.0</a>) 2017
+        </footer>
 		
     </div>
 	</div><!-- container -->

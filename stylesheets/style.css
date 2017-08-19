@@ -1,31 +1,93 @@
-hr {
-	margin-bottom: 10px;
-}
-
-h1 {
-	margin-top: 10px;
-}
-
-.button {
-	float: right;
-}
-
-#nameI {
+.container-header {
 	margin-bottom: 0;
+	margin-top: 16px;
 }
 
-#hero {
-	max-width: 100%;
-	margin: auto;
+.container-subheader {
+	margin-bottom: 8px;
+	margin-top: 0;
+}
+
+hr {
+	margin-bottom: 8px;
+	margin-top: 16px;
+}
+
+figcaption {
+	display: none;
+}
+
+.primary-button {
+	background-color: #226;
+	background-image: none;
+	border: 2px solid #226;
+	box-shadow: -1px 2px 4px rgba(34, 34, 102, .16);
+	color: #fff;
+	font-size: 20px;
+	float: right;
+	margin-bottom: 24px;
+	margin-left: 8px;
+	text-shadow: none;
+	transition: background-color 160ms linear, text-shadow 160ms linear;
+}
+
+.loans-button {
+	background-color: #fff;
+	background-image: none;
+	border: 2px solid #226;
+	box-shadow: -1px 2px 4px rgba(34, 34, 102, .16);
+	color: #226;
+	font-size: 20px;
+	float: right;
+	margin-bottom: 24px;
+	text-shadow: none;
+	transition: background-color 160ms linear, text-shadow 160ms linear;
+}
+
+#loans-add-button {
+	cursor: not-allowed;
+}
+
+.primary-button:active,
+.primary-button:focus,
+.primary-button:hover {
+	background-color: #fff;
+	background-image: none;
+	border: 2px solid #226;
+	box-shadow: -1px 3px 6px rgba(34, 34, 102, .32);
+	color: #226;
+	text-shadow: none;
+	transition: background-color 160ms linear 40ms, box-shadow 200ms linear;
+}
+
+.loans-button:active,
+.loans-button:focus,
+.loans-button:hover {
+	background-color: #226;
+	background-image: none;
+	border: 2px solid #226;
+	box-shadow: -1px 3px 6px rgba(34, 34, 102, .32);
+	color: #fff;
+	text-shadow: none;
+	transition: background-color 160ms linear 40ms, box-shadow 200ms linear;
+}
+
+#loans-add-button:active,
+#loans-add-button:focus,
+#loans-add-button:hover {
+	background-color: #fff;
+	box-shadow: -1px 2px 4px rgba(34, 34, 102, .16);
+	color: #226;
 }
 
 .banner {
-	width: 100%;
+	background-image: url('../images/calc.jpg');
+	background-position: center;
+	background-size: 620px 120px;
+	border: 1px solid #226;
 	margin: auto;
 	height: 120px;
-	background-image: url('../images/calc.jpg');
-	background-position:center;
-	background-size: 620px 120px ;
+	width: 100%;
 }
 
 b {
@@ -37,16 +99,183 @@ i {
 }
 
 .border {
-	border-style:solid;
+	border-style: solid;
 	border-width: 1px;
-	color: darkgray;
+	color: #226;
+}
+
+.header-link {
+	text-decoration: none;
+}
+
+.loans-header {
+	margin-top: 8px;
+}
+
+.loans {
+	margin-bottom: 8px;
+	margin-top: 16px;
+}
+
+.input-group {
+	display: inline-block;
+	float: left;
+	padding-left: 8px;
+}
+
+.input-group:first-of-type {
+	padding-left: 0;
+}
+
+.loan-label {
+	float: left;
+	font-size: 16px;
+	margin-left: 24px;
+	margin-right: 8px;
+	margin-top: 14px;
+}
+
+.loan-label:first-of-type {
+	margin-left: 0;
+}
+
+legend.loan-label:first-of-type {
+	margin-left: 24px;
+}
+
+legend.loan-label {
+	margin-top: 16px;
+}
+
+.loan-input {
+	float: left;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 16px;
+	margin-right: 8px;
+	margin-top: 8px;
+}
+
+.input-decorator {
+	display: inline-block;
+	float: left;
+	font-size: 24px;
+	margin-left: 0;
+	margin-right: 4px;
+	margin-top: 16px;
+}
+
+input.loan-input {
+	border: 1px solid #226;
+	border-radius: 4px;
+	color: #226;
+	padding: 8px 0;
+	text-align: right;
+	width: auto;
+}
+
+select.loan-input {
+	border: 1px solid #226;
+	color: #226;
+	margin-right: 8px;
+	height: 36px;
+	width: auto;
+}
+
+select.loan-input:focus {
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+.loans-variables {
+	margin-top: 8px;
+}
+
+fieldset {
+	margin-bottom: 0;
+}
+
+.frequency-radio {
+	float: left;
+	margin-top: 8px;
+}
+
+.frequency-option {
+	border-bottom: 1px solid #226;
+	border-left: 1px solid #226;
+	border-top: 1px solid #226;
+	color: #226;
+	float: left;
+	font-size: 16px;
+	padding-left: 4px;
+}
+
+.frequency-option:first-of-type {
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+.frequency-option:last-of-type {
+	border-bottom-right-radius: 4px;
+	border-right: 1px solid #226;
+	border-top-right-radius: 4px;
+}
+
+.frequency-option-input {
+	display: inline-block;
+	float: left;
+	height: 28px;
+	width: 22px;
+}
+
+.frequency-option-label {
+	float: left;
+	font-size: 16px;
+	padding-right: 8px;
+	padding-top: 8px;
+}
+
+#loans-calculate-button {
+	float: right;
 }
 
 .formula {
 	width:100%;
 }
 
-#foot {
-	margin:0 10px 10px;
+.results {
+	font-size: 16px;
+}
+
+.footer {
+	margin: 0 10px 24px 0;
 	padding: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+	.input-group {
+		float: none;
+	}
+
+	.loan-label {
+		display: block;
+		margin-left: 0;
+		margin-top: 16px;
+	}
+
+	legend.loan-label:first-of-type {
+		margin-left: 0;
+	}
+
+	.frequency-radio {
+		margin-top: 8px;
+	}
+
+	.frequency-option {
+		box-sizing: border-box;
+		margin-bottom: 0;
+	}
+	.frequency-option-label {
+		font-size: 14px;
+	}
 }
