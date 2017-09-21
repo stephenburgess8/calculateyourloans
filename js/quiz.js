@@ -14,49 +14,22 @@ function move(e, link) {
         document.getElementById("info0"+(position).toString()).style.display="block";
         document.getElementById("content0"+(position-1).toString()).style.display="none";
         document.getElementById("content0"+(position).toString()).style.display="block";
-
-    
 }
 
-function calc(e, link) {
-    e.preventDefault();
-    document.getElementById("info0"+document.getElementById("loc").innerHTML).style.display="none";
-
-    var m = 0;
-    var a = 0;
-    var i = 0;
-    var salary = 0;
-    var p = document.getElementById("pI").value;
-    var r = (document.getElementById("rI").value/100);
-    var t = document.getElementById("tI").value;
-    var n = 12;
-
-    var radios6 = document.getElementsByName('radio6');
-    
-    for (var i = 0, length = radios6.length; i < length; i++) {
-        if (radios6[i].checked) {
-            // Grab the value of selected radio button
-            n = radios6[i].value;
-            break;
-        }
+function dismissMenu(e) {
+    const navList = document.getElementsByClassName("nav-ul")[0];
+    const isClickOnNavList = e.target.className === 'nav-ul';
+    if(navList.className !== "nav-ul" && !isClickOnNavList)
+    {
+        openCloseMenu(e);
     }
+}
 
-    m = (p*(r/n))/(1-Math.pow((1+r/n), -(n*t)));
-    a = m * (n*t);
-    i = a - p;
-    salary = (m / 0.10) * 12;
-
-    
-    document.getElementById("info010").style.display="block";
-    document.getElementById("pO").innerHTML = p;
-    document.getElementById("rO").innerHTML = (r*100).toFixed(1);
-    document.getElementById("tO").innerHTML = t;
-    document.getElementById("nO").innerHTML = n;
-    document.getElementById("mO").innerHTML = m.toFixed(2);
-    document.getElementById("aO").innerHTML = a.toFixed(2);
-    document.getElementById("iO").innerHTML = i.toFixed(2);
-    document.getElementById("sO").innerHTML = salary.toFixed(2);
-
+function openCloseMenu(e)
+{
+    e.stopPropagation();
+    const navList = document.getElementsByClassName("nav-ul")[0];
+    navList.classList.toggle("open");
 }
 
 
@@ -132,7 +105,7 @@ function quiz(e, link) {
         document.getElementById("info0"+document.getElementById("loc").innerHTML).style.display="none";
         document.getElementById("info06").style.display="block";
 
-        if (result3==="higher"){
+        if (result3==="lower"){
             correct3 = true;
             document.getElementById("q3R").style.display="block";
         } else {
@@ -176,11 +149,10 @@ function quiz(e, link) {
 }
 
 function listeners() {
+    document.getElementById("main").addEventListener('click', function(event){ dismissMenu(event); }, false);
+
 	document.getElementById('p01').onclick = function (e) {
         e.preventDefault();
-	
-
-		
 
 		document.getElementById("info00").style.display="none";
         document.getElementById("info01").style.display="block";
@@ -197,21 +169,13 @@ function listeners() {
 
     var quizzes = document.getElementsByClassName("quiz");
 
-
-
     for(var i=0;i<quizzes.length;i++){
       quizzes[i].addEventListener('click', function(e){quiz(e, this)}, false);
     }
-
-    document.getElementById("calculate").addEventListener('click', function(e){calc(e, this)}, false);
-
 }
-
 
 document.onreadystatechange = function () {
     if (document.readyState == "complete") {
-
-	   listeners();
-
+    	listeners();
     }
 };

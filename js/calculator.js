@@ -1,11 +1,32 @@
+function dismissMenu(e) {
+    const navList = document.getElementsByClassName("nav-ul")[0];
+    const isClickOnNavList = e.target.className === 'nav-ul';
+    if(navList.className !== "nav-ul" && !isClickOnNavList)
+    {
+        openCloseMenu(e);
+    }
+}
+
+function openCloseMenu(e)
+{
+    e.stopPropagation();
+    const navList = document.getElementsByClassName("nav-ul")[0];
+    navList.classList.toggle("open");
+}
+
 /**
  * @return void
 **/
 function addLoan() {
-    const loans = document.getElementById("loans");
-    const loansCount = document.getElementsByClassName("loan");
-    const loan = createLoanRow(loansCount.length);
-    loans.appendChild(loan);
+    const loansElement = document.getElementById("loans");
+    const loans = document.getElementsByClassName("loan")
+    const lastLoan = loans[loans.length - 1]; 
+    var lastLoanId = lastLoan.id.slice(-2);
+    if (lastLoanId[0] === "-") {
+        lastLoanId = lastLoanId.slice(-1);
+    }
+    const loan = createLoanRow(+lastLoanId + 1);
+    loansElement.appendChild(loan);
     calc();
 }
 
@@ -129,7 +150,7 @@ function createPrincipalInput(i) {
 
     // Principal Input
     const input = document.createElement("input");
-    input.className = "loan-input";
+    input.className = "loan-input loan-input-principal";
     input.id = "input-" + i + "-principal";
     input.min = "1.00";
     input.max = "1000000.00";
@@ -160,7 +181,7 @@ function createRateInput(i) {
 
     // Rate Input
     const input = document.createElement("input");
-    input.className = "loan-input";
+    input.className = "loan-input loan-input-rate";
     input.id = "input-" + i + "-rate";
     input.min = "0.10";
     input.max = "99.99";
@@ -243,30 +264,40 @@ function calc(event) {
 
     const loans = document.getElementsByClassName("loan");
     console.debug("Number of loans: " + loans.length);
-    for (var i = 0; i < loans.length; i++) {
-        principals.push(document.getElementById("input-" + i + "-principal").value);
-        rates.push(document.getElementById("input-" + i + "-rate").value / 100);
-    }
 
-    var principal = 0;
-    principals.forEach(function(p) { principal = +principal + +p; });
-    console.debug("Total Principal: " + principal.toFixed(2));
+    var totalPrincipal = 0;
+
+    var i = 0;
+    var j = 0;
+    while (j < loans.length) {
+        const loan = document.getElementById("input-" + i + "-principal")
+        if (loan) {
+            const principal = document.getElementById("input-" + i + "-principal").value;
+            principals.push(principal);
+            totalPrincipal = totalPrincipal + +principal;
+            rates.push(document.getElementById("input-" + i + "-rate").value / 100);
+            j++;
+        }
+        i++;
+    }
+    console.debug("Total Principal: " + totalPrincipal);
 
     var totalWeightFactor = 0;
     rates.forEach(function(r, index) {
         totalWeightFactor += r * +principals[index];
     });
     console.debug("Total weight factor: " + totalWeightFactor)
-    const rate = totalWeightFactor / principal;
+    const rate = totalWeightFactor / totalPrincipal;
     console.debug("Weighted APR: " + (rate * 100).toFixed(2));
 
-    const monthly = principal * (rate / period) / (1 - Math.pow((1 + (rate / period)), (-period * time)));
-    const totalPaid = monthly * (period * time);
-    const interestPaid = totalPaid - principal;
+    const monthly = getMonthlyPayment(totalPrincipal, rate, time, period);
+    console.debug("Monthly Payment: " + monthly);
+    const totalPaid = monthly * (12 * time);
+    const interestPaid = totalPaid - totalPrincipal;
     const salary10 = (monthly * (100 / 10)) * 12;
     const salary15 = (monthly * (100 / 15)) * 12;
     
-    document.getElementById("output-principal").innerHTML = principal.toFixed(2);
+    document.getElementById("output-principal").innerHTML = totalPrincipal.toFixed(2);
     document.getElementById("output-rate").innerHTML = (rate*100).toFixed(2);
     document.getElementById("output-time").innerHTML = time;
     document.getElementById("output-monthly").innerHTML = monthly.toFixed(2);
@@ -275,7 +306,28 @@ function calc(event) {
     document.getElementById("output-10-salary").innerHTML = salary10.toFixed(2);
     document.getElementById("output-15-salary").innerHTML = salary15.toFixed(2);
     document.getElementById("output-15-salary").innerHTML = salary15.toFixed(2);
+    document.getElementById("output-frequency").innerHTML = period;
     document.getElementById("output-number-loans").innerHTML = principals.length;
+}
+
+/**
+ * @param float principal
+ * @param float rate
+ * @param integer time
+ * @param integer period
+ * @return float
+**/
+
+function getMonthlyPayment(principal, rate, time, period) {
+    var monthly = principal * (rate / period) / (1 - Math.pow((1 + (rate / period)), (-period * time)));
+
+    if (period == 4) {
+        monthly = monthly / 3;
+    } else if (period == 1) {
+        monthly = monthly / 12;
+    }
+
+    return monthly;
 }
 
 /**
@@ -295,5 +347,6 @@ document.onreadystatechange = function () {
         document.getElementById("input-0-rate").addEventListener('change', function(){ calc(); }, false);
         document.getElementById("loans-clear-button").addEventListener('click', function(){ clear(); }, false);
         document.getElementById("loans-add-button").addEventListener('click', function(){ addLoan(); }, false);
+        document.getElementById("main").addEventListener('click', function(event){ dismissMenu(event); }, false);
 	}
 };

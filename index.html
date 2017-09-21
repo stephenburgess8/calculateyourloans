@@ -18,7 +18,7 @@
 
 	<!-- CSS
   ================================================== -->
-  	<link href='http://fonts.googleapis.com/css?family=Share:400,400italic,700' rel='stylesheet' type='text/css'>
+  	<link href='//fonts.googleapis.com/css?family=Share:400,400italic,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
@@ -27,6 +27,15 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+	<!-- Google Analytics 
+	================================================== -->
+	<script>
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-XXXXX-Y', 'auto');
+	ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 	<!-- Javascript
 	================================================== -->
@@ -37,17 +46,52 @@
 	<link rel="shortcut icon" href="images/favicon.ico">
 
 </head>
-<body>
-	<div class="container">
-		<div class="sixteen columns">
-			<header>
-				<a class="header-link" href="index.html">
-					<h1 class="container-header">Calculate Your Loans</h1>
-					<h4 class="container-subheader">The real cost of loans</h4>
+<body id="main">
+	<header class="primary-header">
+		<div class="container">
+			<div class="ten columns">
+				<a href="/">
+					<span class="header-logo">
+						<img class="logo" alt="Calculator Logo" src="/images/calc.png" >
+					</span>
 				</a>
-			</header>
-		</div>
+				
+				<a class="header-link" href="/">
+					<h1 class="header-title">Calculate Your Loans</h1>
+				</a>
+				
+				<a class="header-link" href="/">
+					<h4 class="header-subtitle">The real cost of loans</h4>
+				</a>
+			</div>
+	
+			<nav class="nav" id="primary-nav">
+				<div id="menu-icon-container" onclick="openCloseMenu(event)">
+					<h5 id="menu-label">Menu</h5>
+					<img id="menu-icon" alt="Menu" src="images/hamburger.svg">
+				</div>
 
+				<ul class="nav-ul">
+					<a class="a" href="/quiz.html">
+						<li class="nav-li">
+							Quiz
+						</li>
+					</a>
+					<a class="a" href="/resources.html">
+						<li class="nav-li">
+							Resources
+						</li>
+					</a>
+					<a class="a" href="/about.html">
+						<li class="nav-li">
+							About
+						</li>
+					</a>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="container">
 		<section class="main">
 			<div class="two-thirds column">
 				<div class="banner" alt="Image of Calculator" /></div>
@@ -66,7 +110,7 @@
 								<option id="option-0-mortgage">Mortgage</option>
 								<option id="option-0-auto">Auto</option>
 								<option id="option-0-credit">Credit Card</option>
-								<option id="option-0-other">Option</option>
+								<option id="option-0-other">Other</option>
 							</select>
 						</div>
 						<div class="input-group">
@@ -76,10 +120,11 @@
 							>Principal</label>
 							<span class="input-decorator">$</span>
 							<input
-								class="loan-input"
+								class="loan-input loan-input-principal"
 								id="input-0-principal"
 								min="1.00"
 								max="1000000.00"
+								maxlength="9"
 								onchange="calc()"
 								step=".01"
 								type="number"
@@ -92,10 +137,11 @@
 								for="input-0-rate"
 							>at rate</label>
 							<input
-								class="loan-input"
+								class="loan-input loan-input-rate"
 								id="input-0-rate"
 								min="0.10"
 								max="99.99"
+								maxlength="4"
 								onchange="calc()"
 								step="0.01"
 								type="number"
@@ -116,10 +162,11 @@
 							for="input-time"
 						>Time</label>
 						<input
-							class="loan-input"
+							class="loan-input loan-input-years"
 							id="input-time"
 							min="1"
 							max="50"
+							onchange="calc()"
 							step="1"
 							type="number"
 							value="5"
@@ -137,6 +184,7 @@
 								      	class="frequency-option-input"
 								      	id="input-frequency-monthly"
 								      	name="frequency"
+								      	onchange="calc()"
 								      	type="radio"
 								      	value="12"
 								      />
@@ -150,6 +198,7 @@
 								      	class="frequency-option-input"
 								      	id="input-frequency-quarterly"
 								      	name="frequency"
+								      	onchange="calc()"
 								      	type="radio"
 								      	value="4"
 								      />
@@ -163,6 +212,7 @@
 								      	class="frequency-option-input"
 								      	id="input-frequency-yearly"
 								      	name="frequency"
+								      	onchange="calc()"
 								      	type="radio"
 								      	value="1"
 								      />
@@ -184,13 +234,6 @@
 
 		<section class="sidebar">
 			<div class="one-third column">
-				<aside>
-					<h4>Amortization Formula</h4>
-					<figure>
-						<img class="formula" src="images/loan.gif" alt="P*(r/n) / (1-(1+r/n)^-nt)" />
-						<figcaption>P*(r/n) / (1-(1+r/n)^-nt)</figcaption>
-					</figure>
-				</aside>
 				<div class="results">
 					<h3>Results</h3>
 					<ul>
@@ -206,7 +249,11 @@
 						<li>
 							<b>10% of Salary</b> : $<span id="output-10-salary">0.00</span>
 						</li>
-						<hr>
+					</ul>
+					<hr>
+
+					<h3>Variables</h3>
+					<ul>
 						<li>
 							<b>Principal (P)</b> : $<span id="output-principal">0.00</span>
 						</li>
@@ -220,16 +267,27 @@
 							<b>Time to Pay Back (t)</b> : <span id="output-time">0</span> Years
 						</li>
 						<li>
+							<b>Compound Frequency (n)</b> : <span id="output-frequency">0</span>
+						</li>
+						<li>
 							<b>Number of Loans</b> : <span id="output-number-loans">1</span>
 						</li>
 					</ul>
 				</div>
+				<hr>
+				<aside>
+					<h4>Amortization Formula</h4>
+					<figure>
+						<img class="formula" src="images/loan.gif" alt="P*(r/n) / (1-(1+r/n)^-nt)" />
+						<figcaption>P*(r/n) / (1-(1+r/n)^-nt)</figcaption>
+					</figure>
+				</aside>
 			</div>
 		</section>
 		<!-- End infoCol -->
 		<br class="clear" />
         <footer class="border sixteen columns footer">
-        	<a href="about.html">About</a> (<a href="https://spdx.org/licenses/GPL-3.0.html">GNU-3.0</a>) 2017
+        	<a href="about.html">About</a> © (<a href="https://spdx.org/licenses/GPL-3.0.html">GNU-3.0</a>) 2017
         </footer>
 		
     </div>

@@ -30,570 +30,533 @@
 
 	<!-- Javascript
 	================================================== -->
- 	<script src="js/main.js"></script>
+ 	<script src="js/quiz.js"></script>
 
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="images/favicon.ico">
 
 </head>
-<body>
-	<header>
-		<div class="sixteen columns">
-			<div class="header-title">
-				<a href="index.html" style="text-decoration:none;">
-					<h1 class="header-title-text">Calculate Your Loans</h1>
+<body id="main">
+	<header class="primary-header">
+		<div class="container">
+			<div class="ten columns">
+				<a href="/">
+					<span class="header-logo">
+						<img class="logo" alt="Calculator Logo" src="/images/calc.png" >
+					</span>
+				</a>
+				
+				<a class="header-link" href="/">
+					<h1 class="header-title">Calculate Your Loans</h1>
+				</a>
+				
+				<a class="header-link" href="/">
+					<h4 class="header-subtitle">The real cost of loans</h4>
 				</a>
 			</div>
-			<div class="nav-container">
-				<nav>
-					<ul class="nav-list">
-						<li class="nav-item"></li>
-						<li class="nav-item"></li>
-						<li class="nav-item"></li>
-					</ul>
-				</nav>
-			</div>
-			<h4>The real cost of loans</h4>
-			<hr />
+	
+			<nav class="nav" id="primary-nav">
+				<div id="menu-icon-container" onclick="openCloseMenu(event)">
+					<h5 id="menu-label">Menu</h5>
+					<img id="menu-icon" alt="Menu" src="images/hamburger.svg">
+				</div>
+
+				<ul class="nav-ul">
+					<a class="a" href="/">
+						<li class="nav-li">
+							Calculator
+						</li>
+					</a>
+					<a class="a" href="/resources.html">
+						<li class="nav-li">
+							Resources
+						</li>
+					</a>
+					<a class="a" href="/about.html">
+						<li class="nav-li">
+							About
+						</li>
+					</a>
+				</ul>
+			</nav>
 		</div>
 	</header>
 
 	<main>
-		<div id="contentCol">
-			<div class="two-thirds column" id="content00">
-				<img id="hero" alt="Stressed Student" src="images/student.jpg" />
-				<p></p>
-			</div>
+		<div class="container">
+			<div id="contentCol">
+				<div class="two-thirds column" id="content00">
+					<img class="hero" alt="Stressed Student" src="images/student.jpg" />
+					<p></p>
+				</div>
 
-			<div class="two-thirds column" id="content01" style="display:none;">
-				<!--<span class="student">Student</span>-->
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
+				<div class="two-thirds column" id="content01" style="display:none;">
+					<!--<span class="student">Student</span>-->
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
 
-				<p>The average starting salary for graduates with Bachelors degrees was $44,259 in 2012. The average student debt was $29,400 in the same year. This theoretical 'average' 2012 graduate could take nine years to pay off their loans at $360 a month. The cost of taking out loans for this 'average' student is $10,000 for an average of over $1,100 for each year it takes to pay back everything. At the tune of $10,000, the cost of taking out loans could mean delaying buying a car and house by several years. With student loan debts measuring at 6% of the $16.7 trillion national debt, the growth of student debt also has a major impact on the U.S. economy. </p>
-				<a href="#" id="p02" class="button move">Start the lesson</a>
-			</div>
+					<p>Average starting salary for graduates with Bachelor's degrees in 2012 was $44,259. Average student debt was $29,400 in the same year. An average 2012 graduate could take <em>nine years</em> to pay off their loans. The real total cost of taking out loans for the average student is $10,000, or $1,100 a year. Taking out loans could mean delaying buying a car and house by several years. Student loan debts are 6% of the $16.7 trillion national debt. </p>
+					<a href="#" id="p02" class="button move">Start the lesson</a>
+				</div>
 
-			<div class="two-thirds column" id="content02" style="display:none;">
-				<!--<span class="student">Student</span>-->
-				<h2>Pop Quiz!</h2>
-				
-  				<p>What is the average cost per year of taking out student loans for our theoretical 'average' student?</p>
-				  <fieldset>
-				    <label for="c1">
-				      <input type="radio" name="radio1" id="c1" value="500" />
-				      <span>$500</span>
-				    </label>
-				    <label for="c2">
-				      <input type="radio" name="radio1" id="c2" value="800" />
-				      <span>$800</span>
-				    </label><label for="c3">
-				      <input type="radio" name="radio1" id="c3" value="1000" />
-				      <span>$1,000</span>
-				    </label>
-				    <label for="c4">
-				      <input type="radio" name="radio1" id="c4" value="1100" />
-				      <span>$1,100</span>
-				    </label>
-				    <label for="c5">
-				      <input type="radio" name="radio1" id="c5" value="1500" />
-				      <span>$1,500</span>
-				    </label>
-				    <label for="c6">
-				      <input type="radio" name="radio1" id="c6" value="2000" />
-				      <span>$2,000</span>
-				    </label>
-				  </fieldset>
-				  <p>What percentage of the $16.7 trillion national debt does student loan debt represent?</p>
-			  	<fieldset>
-				    <label for="d1">
-				      <input type="radio" name="radio2" id="d1" value="0" />
-				      <span>0%</span>
-				    </label>
-				    <label for="d2">
-				      <input type="radio" name="radio2" id="d2" value="2" />
-				      <span>2%</span>
-				    </label>
-				    <label for="d3">
-				      <input type="radio" name="radio2" id="d3" value="6" />
-				      <span>6%</span>
-				    </label>
-				    <label for="d4">
-				      <input type="radio" name="radio2" id="d4" value="8" />
-				      <span>8%</span>
-				    </label>
-				    <label for="d5">
-				      <input type="radio" name="radio2" id="d5" value="10" />
-				      <span>10%</span>
-				    </label>
-				    <label for="d6">
-				      <input type="radio" name="radio2" id="d6" value="12" />
-				      <span>12%</span>
-				    </label>
-				  </fieldset>
-				 
-				  <a href="#" class="button quiz" id="q00" >Check my Answers</a>
-				  
-				 
-			</div>
-
-			<!-- Content 3 -->
-
-			<div class="two-thirds column" id="content03" style="display:none;">
-	
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-
-				<p>The average starting salary for graduates with Bachelors degrees was $44,259 in 2012. The average student debt was $29,400 in the same year. This theoretical 'average' 2012 graduate could take nine years to pay off their loans at $360 a month. The cost of taking out loans for this 'average' student is $10,000 for an average of over $1,100 for each year it takes to pay back everything. At the tune of $10,000, the cost of taking out loans could mean delaying buying a car and house by several years. With student loan debts measuring at 6% of the $16.7 trillion national debt, the growth of student debt also has a major impact on the U.S. economy. </p>
-				<a href="#" class="button move" id="p04">Continue</a>
-			</div>
-
-			<div class="two-thirds column" id="content04" style="display:none;">
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-				<h3>Simple Compound Interest</h3>
-				<p>
-					When an advertisment features an <i>interest rate</i> or <i>annual percentage rate</i> <b>r</b>, often looks can be deceiving. In most cases, the <i>principal</i> balance <b>P</b> collects interest several times in a year, not just once. The annual rate is divided by a number, usually four or twelve, and then the resulting interest rate is used to calculate how much is added to the principal balance in each period. This usually happens either quarterly or monthly. The <i>annual percentage yield</i> will be higher than the <i>annual percentage rate</i>. In the case of savings accounts, this means more money in your account at the end of the year. Unfortunately in the case of student loans, it means that interest collects at slightly faster than the stated interest rate.
-				</p>
-
-				<a href="#" id="p05" class="button move">Next</a>
-			</div>
-
-			<div class="two-thirds column" id="content05" style="display:none;">
-				<h3>Quiz: Compound Interest</h3>
-				
-				<p>You just took out a car loan for $12,000 with an <i>annual percentage rate</i> of 3.4%. You took advantage of two specials at the dealership—"No Payments for 12 Months," and "Compounds Annually". At the end of the year, will your <i>principal</i> balance be higher or lower with the 'Compounds Annually" special than if you got a loan that compounded monthly?</p>
-				  <fieldset>
-				    <label for="e1">
-				      <input type="radio" name="radio3" id="e1" value="higher" />
-				      <span>Higher</span>
-				    </label>
-				    <label for="e2">
-				      <input type="radio" name="radio3" id="e2" value="lower" />
-				      <span>Lower</span>
-				    </label><label for="e3">
-				      <input type="radio" name="radio3" id="e3" value="same" />
-				      <span>No Difference</span>
-				    </label>
-				    
-				  </fieldset>
-				  <p><i>The Multiplicative Property of Exponents</i> says that when you have two or more numbers in the exponent (in our case, <b>n</b> and <b>t</b>, they can be summed (multiplied together) before their base (in our case, (1 + r/n)), is raised to an exponent. <b>Review</b>: Raising a number to an exponent means multiplying the number by itself as many times as the exponent says. So <b>2^4</b> is the same as <b>2 x 2 x 2 x 2 = 16</b>. </p><p>If it takes five years to pay off the car loan, and it compounds monthly, what will our exponent be after <b>n</b> and <b>t</b> are summed? </p>
-			  	<fieldset>
-				    <label for="f1">
-				      <input type="radio" name="radio4" id="f1" value="0.41667" />
-				      <span>0.41667</span>
-				    </label>
-				    <label for="f2">
-				      <input type="radio" name="radio4" id="f2" value="1.23" />
-				      <span>1.25</span>
-				    </label>
-				    <label for="f3">
-				      <input type="radio" name="radio4" id="f3" value="5" />
-				      <span>5</span>
-				    </label>
-				    <label for="f4">
-				      <input type="radio" name="radio4" id="f4" value="20" />
-				      <span>20</span>
-				    </label>
-				    <label for="f5">
-				      <input type="radio" name="radio4" id="f5" value="60" />
-				      <span>60</span>
-				    </label>
-				    <label for="f6">
-				      <input type="radio" name="radio4" id="f6" value="1825" />
-				      <span>1825</span>
-				    </label>
-				  </fieldset>
-				 
-				  <a href="#" class="button quiz" id="q01" >Check my Answers</a>
-
-			</div>
-
-			<div class="two-thirds column" id="content06" style="display:none;">
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-				<h3>Simple Compound Interest</h3>
-				<p>
-					When an advertisment for a car loan, a savings account, or a credit card features an <i>interest rate</i> or <i>annual percentage rate</i> <b>r</b>, often looks can be deceiving. In most cases, the <i>principal</i> balance <b>P</b> collects interest several times in a year, not just once. The annual rate is divided by a number, usually four or twelve, and then the resulting interest rate is used to calculate how much is added to the principal balance. This usually happens either quarterly or monthly. Usually this means that the <i>annual percentage yield</i> will be higher than the <i>annual percentage rate</i>. In the case of savings accounts, this means more money in your account at the end of the year. Unfortunately in the case of student loans, it means that interest collects at slightly faster than the stated interest rate.
-				</p>
-
-				<a href="#" id="p07" class="button move">Next</a>
-			</div>
-
-			<div class="two-thirds column" id="content07" style="display:none;">
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-				<h3>Loan Repayment Formula</h3>
-				<p>
-					Our previous example could tell us what we would need to pay back after a year of interest. However this only works when no payments are made throughout the year. What about when payments are made every month on a monthly compounding loan balance? The monthly payment for the life of the loan is what the loan repayment formula is designed to find.
-				</p>
-				<p>
-					Let's say you start with a balance of $12,000, with a rate of 3.4% or .034. Since interest compounds monthly, plug in 12 for <b>n</b>, and <b>t</b> is 5 for the life span of the loan in years. With those numbers, your numerator is 34 and your denominator is ~0.15613. 34/0.15613 gives you a monthly loan payment of $217.76. In the end, you will pay $1,065.84 in interest for a total of $13,065.84 over five years.
-				</p>
-
-				<a href="#" id="p08" class="button move">Quiz Time</a>
-			</div>
-
-			<div class="two-thirds column" id="content08" style="display:none;">
-				<h3>Quiz: Loan Repayment</h3>
-				
-				<p>Here's a tough one for you. Let's say you start with $24,000 at an interest rate of 6.8%. Just as before, interest compounds monthly. If you want to repay the loan over 8 years, how much will you pay in interest?</p>
-				  <fieldset>
-				    <label for="g1">
-				      <input type="radio" name="radio5" id="g1" value="258.68" />
-				      <span>$258.68</span>
-				    </label>
-				    <label for="g2">
-				      <input type="radio" name="radio5" id="g2" value="324.83" />
-				      <span>$324.83</span>
-				    </label>
-				    <label for="g3">
-				      <input type="radio" name="radio5" id="g3" value="833.74" />
-				      <span>$833.74</span>
-				    </label>
-				    <label for="g4">
-				      <input type="radio" name="radio5" id="g4" value="7183.26" />
-				      <span>$7,183.26</span>
-				    </label>
-				    <label for="g5">
-				      <input type="radio" name="radio5" id="g5" value="9154.08" />
-				      <span>$9,154.08</span>
-				    </label>
-				    <label for="g6">
-				      <input type="radio" name="radio5" id="g6" value="12570.71" />
-				      <span>$12,570.71</span>
-				    </label>
-				    <label for="g7">
-				      <input type="radio" name="radio5" id="g7" value="24833.74" />
-				      <span>$24,833.74</span>
-				    </label>
-				  </fieldset>
-				 
-				  <a href="#" class="button quiz" id="q02" >Check my Answers</a>
-
-			</div>
-
-			<div class="two-thirds column" id="content09" style="display:none;">
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-				<h3>Loan Repayment Formula</h3>
-				<p>
-					Our previous example could tell us what we would need to pay back after a year of interest. However this only works when no payments are made throughout the year. What about when payments are made every month on a monthly compounding loan balance? The monthly payment for the life of the loan is what the loan repayment formula is designed to find.
-				</p>
-				<p>
-					Let's say you start with a balance of $12,000, with a rate of 3.4% or .034. Since interest compounds monthly, plug in 12 for <b>n</b>, and <b>t</b> is 5 for the life span of the loan in years. With those numbers, your numerator is 34 and your denominator is ~0.15613. 34/0.15613 gives you a monthly loan payment of $217.76. In the end, you will pay $1,065.84 in interest for a total of $13,065.84 over five years.
-				</p>
-
-				<a href="#" id="p010" class="button move">Quiz Time</a>
-			</div>
-
-			<div class="two-thirds column" id="content010" style="display:none;">
-				<div id="ban" class="banner" alt="Banner" /></div>
-				<br />
-				<h3>Loan Repayment Calculator</h3>
-				<p>
-					Now that you've learned (or just reviewed if you're a math geek) a little about how compound interest works, and how to calculate loan payments, try out the calculator and crunch some numbers for yourself. Feel free to <a href="mailto:stephen.burgess@purchase.edu?Subject=Astrablade%20game">send me some feedback</a> about what you like or don't like.
-				</p>
-				<!-- Label and text input for P -->
-				<label for="pI">Principal Balance (<b>P</b>)</label>
-				<input type="number" min="0.00" step="1.00" value="24000.00" id="pI" />
-				<label for="rI">Annual Interest Rate (<b>P</b>)</label>
-				<input type="number" min="0.0" max="1.0" step="0.1" value="3.4" id="rI" />
-				<label for="tI">Lifespan of Loan (<b>t</b>)</label>
-				<input type="number" min="1" max="50" step="1" value="5" id="tI" />
-				<label>Compound Frequency (<b>n</b>)</label>
-				<fieldset>
-				    <label for="h1">
-				      <input type="radio" name="radio6" id="h1" value="1" />
-				      <span>Yearly</span>
-				    </label>
-				    <label for="h2">
-				      <input type="radio" name="radio6" id="h2" value="4" />
-				      <span>Quarterly</span>
-				    </label>
-				    <label for="h3">
-				      <input type="radio" name="radio6" id="h3" value="12" />
-				      <span>Monthly</span>
-				    </label>
-				  </fieldset>
-
-				<a href="#" id="calculate" class="button calc">Calculate</a>
-			</div>
-
-		</div>
-
-		<div id="infoCol">
-			<div style="display:none;">
-				Location: <span id="loc" style="display:inline">00</span>
-			</div>
-			<div class="one-third column" id="info00">
-				<h3>Paying back student loans</h3>
-				<p>"The share of 25-34-year olds with homes has fallen by 15 percent since 2005." <a href="http://www.theatlantic.com/business/archive/2014/05/are-student-loans-really-killing-the-housing-market/370809/">Are Student Loans Really Killing the Housing Market?</a> Many students may not understand how much student loans will cost them in the end, how long it will take to pay it off, and what salary they'll need to pay it off in the time frame they want. The basics of student loan debt should be calculated by every student who takes out loans. Let's get started!</p>
-
-				
-				<br />
-				<!-- Start the tutorial -->
-				<a href="#" id="p01" class="button">Begin</a>
-			</div>
-
-			<div class="one-third column" id="info01" style="display:none;">
-				<h3>Some Basic Statistics</h3>
-				<ul>
+				<div class="two-thirds column" id="content02" style="display:none;">
+					<!--<span class="student">Student</span>-->
+					<h2>Pop Quiz!</h2>
 					
-					<h5>Average Student Loan Balance</h5>
-					
-					<li>
-						2012 Graduate: $29,400
-					</li>
-					<li>
-						All U.S. borrowers: $24,301
-					</li>
-					<li>
-						1%: more than $200,000
-					</li>
-					<li>
-						3%: more than $100,000
-					</li>
-					<li>
-						10%: more than $54,000
-					</li>
-					<li>
-						25%: more than $28,000
-					</li>
-					
-					<h5>Past Due</h5>
+	  				<p>What is the cost per year of taking out student loans for the average student?</p>
+					  <fieldset>
+					    <label for="c1">
+					      <input type="radio" name="radio1" id="c1" value="600" />
+					      <span>$700</span>
+					    </label>
+					    <label for="c2">
+					      <input type="radio" name="radio1" id="c2" value="1100" />
+					      <span>$1,100</span>
+					    </label>
+					    <label for="c3">
+					      <input type="radio" name="radio1" id="c3" value="2000" />
+					      <span>$1,900</span>
+					    </label>
+					    <label for="c4">
+					      <input type="radio" name="radio1" id="c4" value="4000" />
+					      <span>$3,700</span>
+					    </label>
+					  </fieldset>
 
-					<li>
-						13% of borrowers have past-due accounts
-					</li>
-					<li>
-						41% of borrowers become deliquent in the first 5 years of repayment
-					</li>
-					<li>
-						33% of borrowers who don't finish college become delinquent and 26% defaulted
-					</li>
-					<li>
-						26% of borrowers who graduate become deliquent and 16% defaulted
-					</li>
-				</ul>
+					  <br>
+					  <p>What percentage of the $16.7 trillion national debt is represented by student loan debt?</p>
+				  	<fieldset>
+					    <label for="d1">
+					      <input type="radio" name="radio2" id="d1" value="0" />
+					      <span>0%</span>
+					    </label>
+					    <label for="d2">
+					      <input type="radio" name="radio2" id="d2" value="3" />
+					      <span>3%</span>
+					    </label>
+					    <label for="d3">
+					      <input type="radio" name="radio2" id="d3" value="6" />
+					      <span>6%</span>
+					    </label>
+					    <label for="d4">
+					      <input type="radio" name="radio2" id="d4" value="12" />
+					      <span>12%</span>
+					    </label>
+					  </fieldset>
+					 
+					  <br>
+					  <a href="#" class="button quiz" id="q00" >Check my Answers</a>
+					  
+					 
+				</div>
 
-			</div>
-			<div class="one-third column" id="info02" style="display:none;">
-				<h3>Some Basic Statistics</h3>
-				<ul>
-					
-					<h5>Average Student Loan Balance</h5>
-					
-					<li>
-						2012 Graduate: $29,400
-					</li>
-					<li>
-						All U.S. borrowers: $24,301
-					</li>
-					<li>
-						1%: more than $200,000
-					</li>
-					<li>
-						3%: more than $100,000
-					</li>
-					<li>
-						10%: more than $54,000
-					</li>
-					<li>
-						25%: more than $28,000
-					</li>
-					
-					<h5>Past Due</h5>
+				<!-- Content 3 -->
 
-					<li>
-						13% of borrowers have past-due accounts
-					</li>
-					<li>
-						41% of borrowers become deliquent in the first 5 years of repayment
-					</li>
-					<li>
-						33% of borrowers who don't finish college become delinquent and 26% defaulted
-					</li>
-					<li>
-						26% of borrowers who graduate become deliquent and 16% defaulted
-					</li>
-				</ul>
-			</div>
-
-			<div class="one-third column" id="info03" style="display:none;">
-				<h3>Quiz Results</h3>
-					
-				<h5>Question 1</h5>
-					<h4 id="q1R" style="color:green; display:none;">Right!</h4>
-					<h4 id="q1W" style="color:red; display:none;">Not Quite.</h4>
-
-					<p>For the theoretical 'average' 2012 graduate who took out $29,400 at 6.8% in loans and gets a starting salary of $44,259, it will take nine years to pay back loans with a total interest accumulated of $9,989.17. This works out to a cost of around $1,100 for each year it takes to pay back the loans.</p>
-					<h5>Question 2</h5>
-					<h4 id="q2R" style="color:green; display:none;">Right!</h4>
-					<h4 id="q2W" style="color:red; display:none;">Not Quite.</h4>
-					<p>Total student loans of about $1 trillion represent about 6% of the $16.7 trillion dollar national debt.</p>
-
-			</div>
-
-			<div class="one-third column" id="info04" style="display:none;">
-				<h4>Compound Interest Formula</h4>
-				<img class="formula" src="images/compound.gif" />
-				<ul>
-					<li>
-						<b>A</b> : <i>Amount</i> of final balance after all interest is collected
-					</li>
-					<li>
-						<b>P</b> : <i>Principal</i> balance before interest is accumulated
-					</li>
-					<li>
-						<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
-					</li>
-					<li>
-						<b>n</b> : <i>Number</i> of times the interest compounds in a year. If interest compounds quarterly, <b>n</b> is equal to four.
-					</li>
-					<li>
-						<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="one-third column" id="info05" style="display:none;">
-				<h4>Compound Interest Formula</h4>
-				<img class="formula" src="images/compound.gif" />
-				<ul>
-					<li>
-						<b>A</b> : <i>Amount</i> of final balance after all interest is collected
-					</li>
-					<li>
-						<b>P</b> : <i>Principal</i> balance before interest is accumulated
-					</li>
-					<li>
-						<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
-					</li>
-					<li>
-						<b>n</b> : <i>Number</i> of times the interest compounds in a year. If interest compounds quarterly, <b>n</b> is equal to four.
-					</li>
-					<li>
-						<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="one-third column" id="info06" style="display:none;">
-				<h3>Quiz Results</h3>
-					
-				<h5>Question 3</h5>
-					<h4 id="q3R" style="color:green; display:none;">Right!</h4>
-					<h4 id="q3W" style="color:red; display:none;">Not Quite.</h4>
-
-					<p>Starting with a balance of $12,000 at 3.4% with no payments for a year, the difference between compounding once a year and compounding monthly is $36.72. Once a year, the end total is $14,183.52. 12 times a year, the end total is $14,220.24.</p>
-					
-					<h5>Question 4</h5>
-					<h4 id="q4R" style="color:green; display:none;">Right!</h4>
-					<h4 id="q4W" style="color:red; display:none;">Not Quite.</h4>
-					<p>Multiplying the total number of years in the life of the loan, five, by the number of times it compounds per year, 12, means that the exponent is 60. The formula in this case is $12,000 * (1 + (0.034 / 12)) ^ (12 * 5).</p>
-
-			</div>
-				
-			<div class="one-third column" id="info07" style="display:none;">
-				<h4>Loan Repayment Formula</h4>
-				<img class="formula" src="images/loan.gif" />
-				<ul>
-					<li>
-						<b>A</b> : <i>Amount</i> of monthly payment.
-					</li>
-					<li>
-						<b>P</b> : <i>Principal</i> balance.
-					</li>
-					<li>
-						<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
-					</li>
-					<li>
-						<b>n</b> : <i>Number</i> of times the interest compounds in a year. We will use 12, since payments are made monthly.
-					</li>
-					<li>
-						<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="one-third column" id="info08" style="display:none;">
-				<h4>Loan Repayment Formula</h4>
-				<img class="formula" src="images/loan.gif" />
-				<ul>
-					<li>
-						<b>A</b> : <i>Amount</i> of monthly payment.
-					</li>
-					<li>
-						<b>P</b> : <i>Principal</i> balance.
-					</li>
-					<li>
-						<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
-					</li>
-					<li>
-						<b>n</b> : <i>Number</i> of times the interest compounds in a year. We will use 12, since payments are made monthly.
-					</li>
-					<li>
-						<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
-					</li>
-				</ul>
-
-			</div>
-
-			<div class="one-third column" id="info09" style="display:none;">
-				<h3>Quiz Results</h3>
-					
-				<h5>Question 5</h5>
-					<h4 id="q5R" style="color:green; display:none;">Right!</h4>
-					<h4 id="q5W" style="color:red; display:none;">Not Quite.</h4>
-
-					<p>Starting with a balance of $24,000 at 6.8% compounding monthly with a life of eight years, your numerator is 136 and your denominator is ~0.419 which gives a monthly payment of $324.83. Multiply this by the number of increments, in this case 96, to get a total repayment of $31,183.68. Subtract the original principal for a total of $7,183.26 in interest over the life of the loan.</p>
-
-			</div>
-
-			<div class="one-third column" id="info010" style="display:none;">
-				<h4>Loan Repayment Calculator</h4>
-				<img class="formula" src="images/loan.gif" />
-				<ul>
-					<li>
-						<b>Principal </b> : $<span id="pO">0.00</span>
-					</li>
-					<li>
-						<b>Annual Interest Rate</b> : <span id="rO">0.0</span>%
-					</li>
-					<li>
-						<b>Life of Loan</b> : <span id="tO">0</span> Years
-					</li>
-					<li>
-						<b>Compound Frequency</b> : <span id="nO">Monthly</span>
-					</li>
-					<li>
-						<b>Monthly Payment</b> : $<span id="mO">0.00</span>
-					</li>
-					<li>
-						<b>Total Paid</b> : $<span id="aO">0.00</span>
-					</li>
-					<li>
-						<b>Interest Paid</b> : $<span id="iO">0.00</span>
-					</li>
-					<li>
-						<b>Salary Needed</b> : $<span id="sO">0.00</span>
-					</li>
-				</ul>
-
-			</div>
+				<div class="two-thirds column" id="content03" style="display:none;">
 		
-			<!-- End infoCol -->
-			<br class="clear" />
-	        <footer class="border sixteen columns" id="foot">
-	        	<a href="about.html">Prothi LLC</a> © 2017 <a href="index.html" style="display:block;float:right;">Use the Calculator</a>
-	        </footer>
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
+
+					<p>Average starting salary for graduates with Bachelor's in 2012 was $44,259. Average student debt was $29,400 in the same year. An average 2012 graduate could take <em>nine years</em> to pay off their loans. The real total cost of taking out loans for the average student is $10,000, or $1,100 a year. Taking out loans could mean delaying buying a car and house by several years. Student loan debts are 6% of the $16.7 trillion national debt.  </p>
+					<a href="#" class="button move" id="p04">Continue</a>
+				</div>
+
+				<div class="two-thirds column" id="content04" style="display:none;">
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
+					<h3>Simple Compound Interest</h3>
+					<p>
+						<em>Interest rates</em> or <em>annual percentage rates</em> (<b>r</b>) are presented as if they only collect interest once a year, but typically it's actually every month. The annual rate is divided by a number called the <em>period</em>, usually twelve (for months) or four (for quarters). The resulting interest rate is used to calculate how much interest to add to the <em>principal</em> balance in each month (or period).</p>
+						<p> The <em>annual percentage yield</em> will be higher than the <em>annual percentage rate</em>. In other words, an APR of 3.4% that compounds monthly will actually collect more than 3.4% interest over the course of a year. That means that the interest rate the loan company tells you you have on a loan (6.8%) actually collects more than 6.8% total interest over the course of a year.
+					</p>
+					<a href="#" id="p05" class="button move">Next</a>
+				</div>
+
+				<div class="two-thirds column" id="content05" style="display:none;">
+					<h3>Quiz: Compound Interest</h3>
+					
+					<p>You are taking out a car loan for $12,000 with an <i>annual percentage rate</i> of 3.4%. You took advantage of a special at the dealership— "Compounds Annually". At the end of the year, will your <i>principal</i> balance be higher or lower if you get the 'Compounds Annually" special than if you get a loan that compounds monthly?</p>
+					  <fieldset>
+					    <label for="e1">
+					      <input type="radio" name="radio3" id="e1" value="higher" />
+					      <span>Higher</span>
+					    </label>
+					    <label for="e2">
+					      <input type="radio" name="radio3" id="e2" value="lower" />
+					      <span>Lower</span>
+					    </label><label for="e3">
+					      <input type="radio" name="radio3" id="e3" value="same" />
+					      <span>No Difference</span>
+					    </label>
+					    
+					  </fieldset>
+					  <br>
+					  <p>The exponent in the compound formula to the right (represented by <em>nt</em>) tells us how many times we should multiply the number in brackets by itself. <b>r</b> is the rate (3.4% or .034) and <b>n</b> is the compound period, or 12 in the case of monthly compounding interest. We want to multiply 1 plus this number (the total number in the brackets) by itself <b>nt</b> times. The way we find <b>nt</b> is to multiply the total time number of years by how many times a year our interest is compounding. If we have a loan that compounds monthly and we are going to pay it off in five years, what is the value of our exponent, <b>nt</b>?
+				  	<fieldset>
+					    <label for="f1">
+					      <input type="radio" name="radio4" id="f1" value="0.41667" />
+					      <span>0.41667</span>
+					    </label>
+					    <label for="f2">
+					      <input type="radio" name="radio4" id="f2" value="1.23" />
+					      <span>1.23</span>
+					    </label>
+					    <label for="f3">
+					      <input type="radio" name="radio4" id="f3" value="60" />
+					      <span>60</span>
+					    </label>
+					    <label for="f4">
+					      <input type="radio" name="radio4" id="f4" value="1825" />
+					      <span>1825</span>
+					    </label>
+					  </fieldset>
+					 
+					  <br>
+					  <a href="#" class="button quiz" id="q01" >Check my Answers</a>
+
+				</div>
+
+				<div class="two-thirds column" id="content06" style="display:none;">
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
+					<h3>Simple Compound Interest</h3>
+					<p>
+						When an advertisment for a car loan, a savings account, or a credit card features an <i>interest rate</i> or <i>annual percentage rate</i> <b>r</b>, often looks can be deceiving. In most cases, the <i>principal</i> balance <b>P</b> collects interest several times in a year, not just once. The annual rate is divided by a number, usually four or twelve, and then the resulting interest rate is used to calculate how much is added to the principal balance. This usually happens either quarterly or monthly. Usually this means that the <i>annual percentage yield</i> will be higher than the <i>annual percentage rate</i>. In the case of savings accounts, this means more money in your account at the end of the year. Unfortunately in the case of student loans, it means that interest collects at slightly faster than the stated interest rate.
+					</p>
+
+					<a href="#" id="p07" class="button move">Next</a>
+				</div>
+
+				<div class="two-thirds column" id="content07" style="display:none;">
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
+					<h3>Loan Repayment Formula</h3>
+					<p>
+						Our previous example could tell us what we would need to pay back after a year of interest. However this only works when no payments are made throughout the year. What about when payments are made every month on a monthly compounding loan balance? The monthly payment for the life of the loan is what the loan repayment formula is designed to find.
+					</p>
+					<p>
+						Let's say you start with a balance of $12,000, with a rate of 3.4% or .034. Since interest compounds monthly, plug in 12 for <b>n</b>, and <b>t</b> is 5 for the life span of the loan in years. With those numbers, your numerator is 34 and your denominator is ~0.15613. 34/0.15613 gives you a monthly loan payment of $217.76. In the end, you will pay $1,065.84 in interest for a total of $13,065.84 over five years.
+					</p>
+
+					<a href="#" id="p08" class="button move">Quiz Time</a>
+				</div>
+
+				<div class="two-thirds column" id="content08" style="display:none;">
+					<h3>Quiz: Loan Repayment</h3>
+					
+					<p>Here's a tough one for you. Let's say you start with $24,000 at an interest rate of 6.8%. Just as before, interest compounds monthly. If you want to repay the loan over 8 years, how much will you pay in interest?</p>
+					<p>
+					 Total time is 8 years
+					 </p>
+					 <p>
+					 The compound period is monthly
+					 </p>
+					 <p>
+					 The principal or starting value is $24,000
+					</p>
+					<p>
+					 Using the formula to the right, we can figure the monthly payment.
+					 </p>
+					 <p>Once we have the monthly payment, we can multiply that times 12 for how much we will pay in a year. Then we can multiply it again by the number of years (8) to figure out how much we will pay overall. Now if we subtract the starting value of $24,000 from this number, we can figure out how much money we will pay in interest over the whole life of the loan.</p>
+					 <p> 6.8% interest is not a very low interest rate. If you don't want to calculate the number, you might be able to guess about how much interest you would pay over the course of 8 years for a $24,000 loan.
+					</p>
+					  <fieldset>
+					    <label for="g1">
+					      <input type="radio" name="radio5" id="g1" value="258.68" />
+					      <span>$258.68</span>
+					    </label>
+					    <label for="g2">
+					      <input type="radio" name="radio5" id="g2" value="833.74" />
+					      <span>$833.74</span>
+					    </label>
+					    <label for="g3">
+					      <input type="radio" name="radio5" id="g3" value="7183.26" />
+					      <span>$7,183.26</span>
+					    </label>
+					    <label for="g4">
+					      <input type="radio" name="radio5" id="g4" value="24833.74" />
+					      <span>$24,833.74</span>
+					    </label>
+					  </fieldset>
+					 
+					  <br>
+					  <a href="#" class="button quiz" id="q02" >Check my Answers</a>
+
+				</div>
+
+				<div class="two-thirds column" id="content09" style="display:none;">
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
+					<h3>Loan Repayment Formula</h3>
+					<p>
+						Our previous example could tell us what we would need to pay back after a year of interest. However this only works when no payments are made throughout the year. What about when payments are made every month on a monthly compounding loan balance? The monthly payment for the life of the loan is what the loan repayment formula is designed to find.
+					</p>
+					<p>
+						Let's say you start with a balance of $12,000, with a rate of 3.4% or .034. Since interest compounds monthly, plug in 12 for <b>n</b>, and <b>t</b> is 5 for the life span of the loan in years. With those numbers, your numerator is 34 and your denominator is ~0.15613. 34/0.15613 gives you a monthly loan payment of $217.76. In the end, you will pay $1,065.84 in interest for a total of $13,065.84 over five years.
+					</p>
+
+					<a href="#" id="p010" class="button move">Quiz Time</a>
+				</div>
+
+				<div class="two-thirds column" id="content010" style="display:none;">
+					<div id="ban" class="banner" alt="Banner" /></div>
+					<br />
+					<h3>Loan Repayment Calculator</h3>
+					<p>
+						Now that you've learned (or just reviewed if you're a math geek) a little about how compound interest works, and how to calculate loan payments, try out the calculator and crunch some numbers for yourself. Feel free to <a href="mailto:stephenburgess8@gmail.com?Subject=calculate%20your%20loans">send me some feedback</a> about what you like or don't like.
+					</p>
+					
+					<a href="/" class="button calc">Calculate your Loans</a>
+				</div>
+
+			</div>
+
+			<div id="infoCol">
+				<div style="display:none;">
+					Location: <span id="loc" style="display:inline">00</span>
+				</div>
+				<div class="one-third column" id="info00">
+					<h3>Paying back student loans</h3>
+					<p>"The share of 25-34-year olds with homes has fallen by 15 percent since 2005." <a href="http://www.theatlantic.com/business/archive/2014/05/are-student-loans-really-killing-the-housing-market/370809/">Are Student Loans Really Killing the Housing Market?</a> Many students may not understand how much student loans will cost them in the end, how long it will take to pay it off, and what salary they'll need to pay it off in the time frame they want. The basics of student loan debt should be calculated by every student who takes out loans. Let's get started!</p>
+
+					
+					<br />
+					<!-- Start the tutorial -->
+					<a href="#" id="p01" class="button">Begin</a>
+				</div>
+
+				<div class="one-third column" id="info01" style="display:none;">
+					<h3>Some Basic Statistics</h3>
+					<ul>
+						
+						<h5>Average Student Loan Balance</h5>
+						
+						<li>
+							2012 Graduate: $29,400
+						</li>
+						<li>
+							All U.S. borrowers: $24,301
+						</li>
+						<li>
+							1%: more than $200,000
+						</li>
+						<li>
+							3%: more than $100,000
+						</li>
+						<li>
+							10%: more than $54,000
+						</li>
+						<li>
+							25%: more than $28,000
+						</li>
+						
+						<h5>Past Due</h5>
+
+						<li>
+							13% of borrowers have past-due accounts
+						</li>
+						<li>
+							41% of borrowers become deliquent in the first 5 years of repayment
+						</li>
+						<li>
+							33% of borrowers who don't finish college become delinquent and 26% defaulted
+						</li>
+						<li>
+							26% of borrowers who graduate become deliquent and 16% defaulted
+						</li>
+					</ul>
+
+				</div>
+				<div class="one-third column" id="info02" style="display:none;">
+					<h3>Some Basic Statistics</h3>
+					<ul>
+						
+						<h5>Average Student Loan Balance</h5>
+						
+						<li>
+							2012 Graduate: $29,400
+						</li>
+						<li>
+							All U.S. borrowers: $24,301
+						</li>
+						<li>
+							1%: more than $200,000
+						</li>
+						<li>
+							3%: more than $100,000
+						</li>
+						<li>
+							10%: more than $54,000
+						</li>
+						<li>
+							25%: more than $28,000
+						</li>
+						
+						<h5>Past Due</h5>
+
+						<li>
+							13% of borrowers have past-due accounts
+						</li>
+						<li>
+							41% of borrowers become deliquent in the first 5 years of repayment
+						</li>
+						<li>
+							33% of borrowers who don't finish college become delinquent and 26% defaulted
+						</li>
+						<li>
+							26% of borrowers who graduate become deliquent and 16% defaulted
+						</li>
+					</ul>
+				</div>
+
+				<div class="one-third column" id="info03" style="display:none;">
+					<h3>Quiz Results</h3>
+						
+					<h5>Question 1</h5>
+						<h4 id="q1R" style="color:green; display:none;">Right!</h4>
+						<h4 id="q1W" style="color:red; display:none;">Not Quite.</h4>
+
+						<p>For the theoretical 'average' 2012 graduate who took out $29,400 at 6.8% in loans and gets a starting salary of $44,259, it will take nine years to pay back loans with a total interest accumulated of $9,989.17. This works out to a cost of around $1,100 for each year it takes to pay back the loans.</p>
+						<h5>Question 2</h5>
+						<h4 id="q2R" style="color:green; display:none;">Right!</h4>
+						<h4 id="q2W" style="color:red; display:none;">Not Quite.</h4>
+						<p>Total student loans of about $1 trillion represent about 6% of the $16.7 trillion dollar national debt.</p>
+
+				</div>
+
+				<div class="one-third column" id="info04" style="display:none;">
+					<h4>Compound Interest Formula</h4>
+					<img class="formula" src="images/compound.gif" />
+					<ul>
+						<li>
+							<b>A</b> : <i>Amount</i> of final balance after all interest is collected
+						</li>
+						<li>
+							<b>P</b> : <i>Principal</i> balance before interest is accumulated
+						</li>
+						<li>
+							<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
+						</li>
+						<li>
+							<b>n</b> : <i>Number</i> of times the interest compounds in a year. If interest compounds quarterly, <b>n</b> is equal to four.
+						</li>
+						<li>
+							<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="one-third column" id="info05" style="display:none;">
+					<h4>Compound Interest Formula</h4>
+					<img class="formula" src="images/compound.gif" />
+					<ul>
+						<li>
+							<b>A</b> : <i>Amount</i> of final balance after all interest is collected
+						</li>
+						<li>
+							<b>P</b> : <i>Principal</i> balance before interest is accumulated
+						</li>
+						<li>
+							<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
+						</li>
+						<li>
+							<b>n</b> : <i>Number</i> of times the interest compounds in a year. If interest compounds quarterly, <b>n</b> is equal to four.
+						</li>
+						<li>
+							<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="one-third column" id="info06" style="display:none;">
+					<h3>Quiz Results</h3>
+						
+					<h5>Question 3</h5>
+						<h4 id="q3R" style="color:green; display:none;">Right!</h4>
+						<h4 id="q3W" style="color:red; display:none;">Not Quite.</h4>
+
+						<p>Starting with a balance of $12,000 at 3.4%, the difference between compounding once a year and compounding monthly is $36.72. Once a year, the end total is $14,183.52. 12 times a year, the end total is $14,220.24.</p>
+						
+						<h5>Question 4</h5>
+						<h4 id="q4R" style="color:green; display:none;">Right!</h4>
+						<h4 id="q4W" style="color:red; display:none;">Not Quite.</h4>
+						<p>Multiplying the total number of years in the life of the loan, five, by the number of times it compounds per year, 12, means that the exponent is 60. The formula in this case is $12,000 * (1 + (0.034 / 12)) ^ (12 * 5).</p>
+
+				</div>
+					
+				<div class="one-third column" id="info07" style="display:none;">
+					<h4>Loan Repayment Formula</h4>
+					<img class="formula" src="images/loan.gif" />
+					<ul>
+						<li>
+							<b>A</b> : <i>Amount</i> of monthly payment.
+						</li>
+						<li>
+							<b>P</b> : <i>Principal</i> balance.
+						</li>
+						<li>
+							<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
+						</li>
+						<li>
+							<b>n</b> : <i>Number</i> of times the interest compounds in a year. We will use 12, since payments are made monthly.
+						</li>
+						<li>
+							<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="one-third column" id="info08" style="display:none;">
+					<h4>Loan Repayment Formula</h4>
+					<img class="formula" src="images/loan.gif" />
+					<ul>
+						<li>
+							<b>A</b> : <i>Amount</i> of monthly payment.
+						</li>
+						<li>
+							<b>P</b> : <i>Principal</i> balance.
+						</li>
+						<li>
+							<b>r</b> : Interest <i>Rate</i>, usually per year (e.g. a 6.8% annual interest rate is used as .068 in this formula)
+						</li>
+						<li>
+							<b>n</b> : <i>Number</i> of times the interest compounds in a year. We will use 12, since payments are made monthly.
+						</li>
+						<li>
+							<b>t</b> : <i>Time</i>, total life span of the balance with interest, usually in years.
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="one-third column" id="info09" style="display:none;">
+					<h3>Quiz Results</h3>
+						
+					<h5>Question 5</h5>
+						<h4 id="q5R" style="color:green; display:none;">Right!</h4>
+						<h4 id="q5W" style="color:red; display:none;">Not Quite.</h4>
+
+						<p>Starting with a balance of $24,000 at 6.8% compounding monthly with a life of eight years, your numerator is 136 and your denominator is ~0.419 which gives a monthly payment of $324.83. Multiply this by the number of increments, in this case 96, to get a total repayment of $31,183.68. Subtract the original principal for a total of $7,183.26 in interest over the life of the loan.</p>
+
+				</div>
+
+				<div class="one-third column" id="info010" style="display:none;">
+					<h4>Loan Repayment Calculator</h4>
+					<img class="formula" src="images/loan.gif" />
+				</div>
 			
-    	</div>
+				<!-- End infoCol -->
+				<br class="clear" />
+		        <footer class="border sixteen columns footer">
+		        	<a href="about.html">About</a> © (<a href="https://spdx.org/licenses/GPL-3.0.html">GNU-3.0</a>) 2017
+		        </footer>
+				
+	    	</div>
+	    </div>
 	</main><!-- container -->
 
 
