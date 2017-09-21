@@ -49,7 +49,7 @@ function createLoanRow(i) {
     loan.appendChild(rateInput);
 
     const removeButton = createRemoveButton(i);
-    loan.append(removeButton);
+    loan.appendChild(removeButton);
 
     const clear = document.createElement("div");
     clear.className = "clear";
