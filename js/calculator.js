@@ -40,7 +40,7 @@ function createLoanRow(i) {
     loan.id = "loan-" + i;
 
     const removeButton = createRemoveButton(i);
-    loan.append(removeButton);
+    loan.appendChild(removeButton);
 
     const typeSelect = createTypeSelect(i);
     loan.appendChild(typeSelect);
@@ -50,6 +50,7 @@ function createLoanRow(i) {
 
     const rateInput = createRateInput(i);
     loan.appendChild(rateInput);
+
     const clear = document.createElement("div");
     clear.className = "clear";
     loan.appendChild(clear);
