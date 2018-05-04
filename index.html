@@ -1,297 +1,305 @@
 <!DOCTYPE html>
+<!-- Open Graph data -->
+<meta property="og:title" content="Calculate Your Loans" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.calculateyourloans.com/" />
+<meta property="og:image" content="https://www.calculateyourloans.com/images/calc.jpg" />
+<meta property="og:description" content="A calculator tool to learn about how long it will take to pay off your loans and how much it will cost." />
+<meta property="fb:app_id" content="1925557961042608" />
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
+   <link href="https://www.calculateyourloans.com" hreflang="en-us" rel="alternate" title="Calculate Your Loans" type="text/html"/>
+   <!-- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+   <title>Calculate Your Loans</title>
+   <meta name="description" content="A calculator tool to learn about how long it will take to pay off your loans and how much it will cost.">
+   <meta name="author" content="Prothi LLC">
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>Calculate Your Loans</title>
-	<meta name="description" content="A calculator tool to learn about how long it will take to pay off your loans and how much it will cost.">
-	<meta name="author" content="Prothi LLC">
+   <!-- Mobile Specific Metas
+   ================================================== -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <!-- CSS
+   ================================================== -->
+   <link href='//fonts.googleapis.com/css?family=Share:400,400italic,700' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="stylesheets/base.css">
+   <link rel="stylesheet" href="stylesheets/skeleton.css">
+   <link rel="stylesheet" href="stylesheets/layout.css">
+   <link rel="stylesheet" href="stylesheets/style.css">
 
-	<!-- CSS
-  ================================================== -->
-  	<link href='//fonts.googleapis.com/css?family=Share:400,400italic,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
-	<link rel="stylesheet" href="stylesheets/style.css">
+   <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+   <!-- Google Analytics 
+   ================================================== -->
+   <meta name="google-site-verification" content="rtIpyqePkBBYLKkuh8KBTdTQAIcuVQUoOmTi8LTdQ8c" />
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104974033-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-104974033-1');
+   </script>
 
-	<!-- Google Analytics 
-	================================================== -->
-	<script>
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-XXXXX-Y', 'auto');
-	ga('send', 'pageview');
-	</script>
-	<script async src='https://www.google-analytics.com/analytics.js'></script>
+   <!-- Javascript
+   ================================================== -->
+   <script type="text/javascript" src="js/calculator.js" defer></script>
 
-	<!-- Javascript
-	================================================== -->
-	<script type="text/javascript" src="js/calculator.js" defer></script>
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.ico">
+   <!-- Favicons
+   ================================================== -->
+   <link rel="shortcut icon" href="images/favicon.ico">
 
 </head>
 <body id="main">
-	<header class="primary-header">
-		<div class="container">
-			<div class="ten columns">
-				<a href="/">
-					<span class="header-logo">
-						<img class="logo" alt="Calculator Logo" src="/images/calc.png" >
-					</span>
-				</a>
-				
-				<a class="header-link" href="/">
-					<h1 class="header-title">Calculate Your Loans</h1>
-				</a>
-				
-				<a class="header-link" href="/">
-					<h4 class="header-subtitle">The real cost of loans</h4>
-				</a>
-			</div>
-	
-			<nav class="nav" id="primary-nav">
-				<div id="menu-icon-container" onclick="openCloseMenu(event)">
-					<h5 id="menu-label">Menu</h5>
-					<img id="menu-icon" alt="Menu" src="images/hamburger.svg">
-				</div>
+   <header class="primary-header">
+      <div class="container">
+         <div class="ten columns">
+            <a href="/">
+               <span class="header-logo">
+                  <img class="logo" alt="Calculator Logo" src="images/calc.png" >
+               </span>
+            </a>
+            
+            <a class="header-link" href="/">
+               <h1 class="header-title">Calculate Your Loans</h1>
+            </a>
+            
+            <a class="header-link" href="/">
+               <h4 class="header-subtitle">The real cost of loans</h4>
+            </a>
+         </div>
+   
+         <nav class="nav" id="primary-nav">
+            <div id="menu-icon-container" onclick="openCloseMenu(event)">
+               <h5 id="menu-label">Menu</h5>
+               <img id="menu-icon" alt="Menu" src="images/hamburger.svg">
+            </div>
 
-				<ul class="nav-ul">
-					<a class="a" href="/quiz.html">
-						<li class="nav-li">
-							Quiz
-						</li>
-					</a>
-					<a class="a" href="/resources.html">
-						<li class="nav-li">
-							Resources
-						</li>
-					</a>
-					<a class="a" href="/about.html">
-						<li class="nav-li">
-							About
-						</li>
-					</a>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<div class="container">
-		<section class="main">
-			<div class="two-thirds column">
-				<div class="banner" alt="Image of Calculator" /></div>
-				<div class="loans" id="loans">
-					<div class="loan" id="loan-0">
-						<div class="input-group">
-							<label
-								class="loan-label loan-label-select"
-								for="input-0-type"
-							>Type</label>
-							<select
-								class="loan-input"
-								id="input-0-type"
-							>
-								<option id="option-0-student">Student Loan</option>
-								<option id="option-0-mortgage">Mortgage</option>
-								<option id="option-0-auto">Auto</option>
-								<option id="option-0-credit">Credit Card</option>
-								<option id="option-0-other">Other</option>
-							</select>
-						</div>
-						<div class="input-group">
-							<label 
-								class="loan-label"
-								for="input-0-principal" 
-							>Principal</label>
-							<span class="input-decorator">$</span>
-							<input
-								class="loan-input loan-input-principal"
-								id="input-0-principal"
-								min="1.00"
-								max="1000000.00"
-								maxlength="9"
-								onchange="calc()"
-								step=".01"
-								type="number"
-								value="30000.00"
-							/>
-						</div>
-						<div class="input-group">
-							<label
-								class="loan-label"
-								for="input-0-rate"
-							>at rate</label>
-							<input
-								class="loan-input loan-input-rate"
-								id="input-0-rate"
-								min="0.10"
-								max="99.99"
-								maxlength="4"
-								onchange="calc()"
-								step="0.01"
-								type="number"
-								value="3.8"
-							/>
-							<span class="input-decorator">%</span>
-						</div>
-						<div class="clear"></div>
-					</div>
-				</div>
-				<br class="clear" />
-				<button class="loans-button" id="loans-add-button">Add a new loan</button> 
-				<hr>
-				<div class="loans-variables">
-					<div class="input-group">
-						<label
-							class="loan-label"
-							for="input-time"
-						>Time</label>
-						<input
-							class="loan-input loan-input-years"
-							id="input-time"
-							min="1"
-							max="50"
-							onchange="calc()"
-							step="1"
-							type="number"
-							value="5"
-						/>
-						<span class="input-decorator">Years</span>
-					</div>
-					<div class="input-group">
-						<div class="loans-frequency">
-							<fieldset>
-								<legend class="loan-label">Compounds</legend>
-								<ul class="frequency-radio">
-								    <li class="frequency-option">
-								      <input
-								      	checked
-								      	class="frequency-option-input"
-								      	id="input-frequency-monthly"
-								      	name="frequency"
-								      	onchange="calc()"
-								      	type="radio"
-								      	value="12"
-								      />
-								      <label 
-								      	class="frequency-option-label"
-								      	for="input-frequency-monthly"
-								      >Monthly</label>
-								    </li>
-								    <li class="frequency-option">
-								      <input
-								      	class="frequency-option-input"
-								      	id="input-frequency-quarterly"
-								      	name="frequency"
-								      	onchange="calc()"
-								      	type="radio"
-								      	value="4"
-								      />
-								      <label
-								      	class="frequency-option-label"
-								      	for="input-frequency-quarterly"
-								      >Quarterly</label>
-								    </li>
-								    <li class="frequency-option">
-								      <input
-								      	class="frequency-option-input"
-								      	id="input-frequency-yearly"
-								      	name="frequency"
-								      	onchange="calc()"
-								      	type="radio"
-								      	value="1"
-								      />
-								      <label 
-								      	class="frequency-option-label"
-								      	for="input-frequency-yearly"
-								      >Yearly</label>
-								    </li>
-								</ul>
-							</fieldset>
-						</div>
-					</div>
-				</div>
-				<div class="clear"></div>
-				<button id="loans-calculate-button" class="primary-button">Calculate</button>
-				<button id="loans-clear-button" class="loans-button">Clear</button>
-			</div>
-		</section>
+            <ul class="nav-ul">
+               <a class="a" href="/quiz.html">
+                  <li class="nav-li">
+                     Quiz
+                  </li>
+               </a>
+               <a class="a" href="/resources.html">
+                  <li class="nav-li">
+                     Resources
+                  </li>
+               </a>
+               <a class="a" href="/about.html">
+                  <li class="nav-li">
+                     About
+                  </li>
+               </a>
+            </ul>
+         </nav>
+      </div>
+   </header>
+   <div class="container">
+      <section class="main">
+         <div class="two-thirds column">
+            <div class="banner" alt="Image of Calculator" /></div>
+            <div class="loans" id="loans">
+               <div class="loan" id="loan-0">
+                  <div class="input-group">
+                     <label
+                        class="loan-label loan-label-select"
+                        for="input-0-type"
+                     >Type</label>
+                     <select
+                        class="loan-input"
+                        id="input-0-type"
+                     >
+                        <option id="option-0-student">Student Loan</option>
+                        <option id="option-0-mortgage">Mortgage</option>
+                        <option id="option-0-auto">Auto</option>
+                        <option id="option-0-credit">Credit Card</option>
+                        <option id="option-0-other">Other</option>
+                     </select>
+                  </div>
+                  <div class="input-group">
+                     <label 
+                        class="loan-label"
+                        for="input-0-principal" 
+                     >Principal</label>
+                     <span class="input-decorator">$</span>
+                     <input
+                        class="loan-input loan-input-principal"
+                        id="input-0-principal"
+                        min="1.00"
+                        max="1000000.00"
+                        maxlength="9"
+                        onchange="calc()"
+                        step=".01"
+                        type="number"
+                        value="30000.00"
+                     />
+                  </div>
+                  <div class="input-group">
+                     <label
+                        class="loan-label"
+                        for="input-0-rate"
+                     >at rate</label>
+                     <span class="input-decorator">%</span>
+                     <input
+                        class="loan-input loan-input-rate"
+                        id="input-0-rate"
+                        min="0.10"
+                        max="99.99"
+                        maxlength="4"
+                        onchange="calc()"
+                        step="0.01"
+                        type="number"
+                        value="3.8"
+                     />
+                  </div>
+                  <div class="clear"></div>
+               </div>
+            </div>
+            <br class="clear" />
+            <button class="loans-button" id="loans-add-button">Add a new loan</button> 
+            <hr>
+            <div class="loans-variables">
+               <div class="input-group">
+                  <label
+                     class="loan-label"
+                     for="input-time"
+                  >Time (in years)</label>
+                  <input
+                     class="loan-input loan-input-years"
+                     id="input-time"
+                     min="1"
+                     max="50"
+                     onchange="calc()"
+                     step="1"
+                     type="number"
+                     value="5"
+                  />
+               </div>
+               <div class="input-group">
+                  <div class="loans-frequency">
+                     <fieldset>
+                        <legend class="loan-label">Compounds</legend>
+                        <ul class="frequency-radio">
+                           <li class="frequency-option">
+                              <input
+                                 checked
+                                 class="frequency-option-input"
+                                 id="input-frequency-monthly"
+                                 name="frequency"
+                                 onchange="calc()"
+                                 type="radio"
+                                 value="12"
+                              />
+                              <label 
+                                 class="frequency-option-label"
+                                 for="input-frequency-monthly"
+                              >Monthly</label>
+                           </li>
+                           <li class="frequency-option">
+                              <input
+                                 class="frequency-option-input"
+                                 id="input-frequency-quarterly"
+                                 name="frequency"
+                                 onchange="calc()"
+                                 type="radio"
+                                 value="4"
+                              />
+                              <label
+                                 class="frequency-option-label"
+                                 for="input-frequency-quarterly"
+                              >Quarterly</label>
+                           </li>
+                           <li class="frequency-option">
+                              <input
+                                 class="frequency-option-input"
+                                 id="input-frequency-yearly"
+                                 name="frequency"
+                                 onchange="calc()"
+                                 type="radio"
+                                 value="1"
+                              />
+                              <label 
+                                 class="frequency-option-label"
+                                 for="input-frequency-yearly"
+                              >Yearly</label>
+                           </li>
+                        </ul>
+                     </fieldset>
+                  </div>
+               </div>
+            </div>
+            <div class="clear"></div>
+            <button id="loans-calculate-button" class="primary-button">Calculate</button>
+            <button id="loans-clear-button" class="loans-button">Clear</button>
+         </div>
+      </section>
 
-		<section class="sidebar">
-			<div class="one-third column">
-				<div class="results">
-					<h3>Results</h3>
-					<ul>
-						<li>
-							<b>Monthly Payment</b> : $<span id="output-monthly">0.00</span>
-						</li>
-						<li>
-							<b>Interest Paid</b> : $<span id="output-interest-paid">0.00</span>
-						</li>
-						<li>
-							<b>15% of Salary</b> : $<span id="output-15-salary">0.00</span>
-						</li>
-						<li>
-							<b>10% of Salary</b> : $<span id="output-10-salary">0.00</span>
-						</li>
-					</ul>
-					<hr>
+      <section class="sidebar">
+         <div class="one-third column">
+            <div class="results">
+               <h3>Results</h3>
+               <ul>
+                  <li>
+                     <b>Monthly Payment</b> : $<span id="output-monthly">0.00</span>
+                  </li>
+                  <li>
+                     <b>Interest Paid</b> : $<span id="output-interest-paid">0.00</span>
+                  </li>
+                  <li>
+                     <b>15% of Salary</b> : $<span id="output-15-salary">0.00</span>
+                  </li>
+                  <li>
+                     <b>10% of Salary</b> : $<span id="output-10-salary">0.00</span>
+                  </li>
+               </ul>
+               <hr>
 
-					<h3>Variables</h3>
-					<ul>
-						<li>
-							<b>Principal (P)</b> : $<span id="output-principal">0.00</span>
-						</li>
-						<li>
-							<b>Total Paid (A)</b> : $<span id="output-total-paid">0.00</span>
-						</li>
-						<li>
-							<b>Weighted APR (r)</b> : <span id="output-rate">0.0</span>%
-						</li>
-						<li>
-							<b>Time to Pay Back (t)</b> : <span id="output-time">0</span> Years
-						</li>
-						<li>
-							<b>Compound Frequency (n)</b> : <span id="output-frequency">0</span>
-						</li>
-						<li>
-							<b>Number of Loans</b> : <span id="output-number-loans">1</span>
-						</li>
-					</ul>
-				</div>
-				<hr>
-				<aside>
-					<h4>Amortization Formula</h4>
-					<figure>
-						<img class="formula" src="images/loan.gif" alt="P*(r/n) / (1-(1+r/n)^-nt)" />
-						<figcaption>P*(r/n) / (1-(1+r/n)^-nt)</figcaption>
-					</figure>
-				</aside>
-			</div>
-		</section>
-		<!-- End infoCol -->
-		<br class="clear" />
-        <footer class="border sixteen columns footer">
-        	<a href="about.html">About</a> © (<a href="https://spdx.org/licenses/GPL-3.0.html">GNU-3.0</a>) 2017
-        </footer>
-		
-    </div>
-	</div><!-- container -->
+               <h3>Variables</h3>
+               <ul>
+                  <li>
+                     <b>Principal (P)</b> : $<span id="output-principal">0.00</span>
+                  </li>
+                  <li>
+                     <b>Total Paid (A)</b> : $<span id="output-total-paid">0.00</span>
+                  </li>
+                  <li>
+                     <b>Weighted APR (r)</b> : <span id="output-rate">0.0</span>%
+                  </li>
+                  <li>
+                     <b>Time to Pay Back (t)</b> : <span id="output-time">0</span> Years
+                  </li>
+                  <li>
+                     <b>Compound Frequency (n)</b> : <span id="output-frequency">0</span>
+                  </li>
+                  <li>
+                     <b>Number of Loans</b> : <span id="output-number-loans">1</span>
+                  </li>
+               </ul>
+            </div>
+            <hr>
+            <aside>
+               <h4>Amortization Formula</h4>
+               <figure>
+                  <img class="formula" src="images/loan.gif" alt="P*(r/n) / (1-(1+r/n)^-nt)" />
+                  <figcaption>P*(r/n) / (1-(1+r/n)^-nt)</figcaption>
+               </figure>
+            </aside>
+         </div>
+      </section>
+      <!-- End infoCol -->
+      <br class="clear" />
+         <footer class="border sixteen columns footer">
+            <a href="about.html">About</a> © (<a href="https://spdx.org/licenses/GPL-3.0.html">GNU-3.0</a>) 2018
+         </footer>   
+      </div>
+   </div><!-- container -->
 
 
 <!-- End Document

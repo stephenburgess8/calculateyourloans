@@ -129,7 +129,7 @@ figcaption {
 .primary-button {
 	background-color: #226;
 	background-image: none;
-	border: 2px solid #226;
+	border: 1px solid #226;
 	box-shadow: -1px 2px 4px rgba(34, 34, 102, .16);
 	color: #fff;
 	font-size: 20px;
@@ -143,7 +143,7 @@ figcaption {
 .loans-button {
 	background-color: #fff;
 	background-image: none;
-	border: 2px solid #226;
+	border: 1px solid #226;
 	box-shadow: -1px 2px 4px rgba(34, 34, 102, .16);
 	color: #226;
 	font-size: 20px;
@@ -158,7 +158,7 @@ figcaption {
 .primary-button:hover {
 	background-color: #fff;
 	background-image: none;
-	border: 2px solid #226;
+	border: 1px solid #226;
 	box-shadow: -1px 3px 6px rgba(34, 34, 102, .32);
 	color: #226;
 	text-shadow: none;
@@ -170,7 +170,7 @@ figcaption {
 .loans-button:hover {
 	background-color: #226;
 	background-image: none;
-	border: 2px solid #226;
+	border: 1px solid #226;
 	box-shadow: -1px 3px 6px rgba(34, 34, 102, .32);
 	color: #fff;
 	text-shadow: none;
@@ -214,6 +214,23 @@ i {
 	margin-top: 16px;
 }
 
+.loan {
+	float: right;
+}
+
+.button-remove {
+	float: left;
+}
+
+.button-remove.spacer {
+	display: inline-block;
+}
+
+.button-remove-icon.spacer {
+	float: left;
+	visibility: none;
+}
+
 .input-group {
 	display: inline-block;
 	float: left;
@@ -222,6 +239,10 @@ i {
 
 .input-group:first-of-type {
 	padding-left: 0;
+}
+
+.loans-variables .input-group {
+	float: right;
 }
 
 .loan-label {
@@ -286,6 +307,7 @@ select.loan-input {
 
 .loan-input-rate,
 .loan-input-years {
+	margin-right: 0;
 	width: 72px;
 }
 
@@ -333,6 +355,7 @@ fieldset {
 	display: inline-block;
 	float: left;
 	height: 28px;
+	margin-top: 1px;
 	width: 22px;
 }
 
@@ -340,7 +363,7 @@ fieldset {
 	float: left;
 	font-size: 16px;
 	padding-right: 8px;
-	padding-top: 8px;
+	padding-top: 5px;
 }
 
 .button-remove {
@@ -492,7 +515,7 @@ fieldset {
 	.header-logo {
 		margin-right: 24px;
 	}
-
+.
 	.loan-label {
 		display: block;
 		margin-left: 0;

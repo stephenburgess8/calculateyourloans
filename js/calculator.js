@@ -39,6 +39,9 @@ function createLoanRow(i) {
     loan.className = "loan";
     loan.id = "loan-" + i;
 
+    const removeButton = createRemoveButton(i);
+    loan.append(removeButton);
+
     const typeSelect = createTypeSelect(i);
     loan.appendChild(typeSelect);
 
@@ -47,10 +50,6 @@ function createLoanRow(i) {
 
     const rateInput = createRateInput(i);
     loan.appendChild(rateInput);
-
-    const removeButton = createRemoveButton(i);
-    loan.append(removeButton);
-
     const clear = document.createElement("div");
     clear.className = "clear";
     loan.appendChild(clear);
@@ -179,6 +178,13 @@ function createRateInput(i) {
     label.htmlFor = "input-" + i + "-rate";
     inputGroup.appendChild(label);
 
+    // Rate Input Decorator
+    const decorator = document.createElement("span");
+    decorator.className = "input-decorator";
+    const decoratorContents = document.createTextNode("%");
+    decorator.appendChild(decoratorContents);
+    inputGroup.appendChild(decorator);
+
     // Rate Input
     const input = document.createElement("input");
     input.className = "loan-input loan-input-rate";
@@ -190,13 +196,6 @@ function createRateInput(i) {
     input.value = "3.8";
     input.onchange = function(){ calc();};
     inputGroup.appendChild(input);
-
-    // Rate Input Decorator
-    const decorator = document.createElement("span");
-    decorator.className = "input-decorator";
-    const decoratorContents = document.createTextNode("%");
-    decorator.appendChild(decoratorContents);
-    inputGroup.appendChild(decorator);
 
     return inputGroup;
 }
