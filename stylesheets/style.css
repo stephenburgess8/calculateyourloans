@@ -136,6 +136,7 @@ figcaption {
 	float: right;
 	margin-bottom: 24px;
 	margin-left: 8px;
+	margin-top: 8px;
 	text-shadow: none;
 	transition: background-color 160ms linear, text-shadow 160ms linear;
 }
@@ -149,6 +150,7 @@ figcaption {
 	font-size: 20px;
 	float: right;
 	margin-bottom: 24px;
+	margin-top: 8px;
 	text-shadow: none;
 	transition: background-color 160ms linear, text-shadow 160ms linear;
 }
@@ -233,8 +235,7 @@ i {
 
 .input-group {
 	display: inline-block;
-	float: left;
-	padding-left: 4px;
+	float: right;
 }
 
 .input-group:first-of-type {
@@ -248,13 +249,9 @@ i {
 .loan-label {
 	float: left;
 	font-size: 16px;
-	margin-left: 24px;
+	margin-left: 8px;
 	margin-right: 8px;
-	margin-top: 14px;
-}
-
-.loan-label:first-of-type {
-	margin-left: 0;
+	margin-top: 16px;
 }
 
 legend.loan-label:first-of-type {
@@ -263,15 +260,6 @@ legend.loan-label:first-of-type {
 
 legend.loan-label {
 	margin-top: 16px;
-}
-
-.loan-input {
-	float: left;
-	font-size: 16px;
-	font-weight: 600;
-	margin-bottom: 16px;
-	margin-right: 8px;
-	margin-top: 8px;
 }
 
 .input-decorator {
@@ -289,7 +277,12 @@ legend.loan-label {
 	box-sizing: border-box;
 	color: #226;
 	height: 36px;
-	margin-right: 8px;
+	float: left;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 0px;
+	margin-right: 0;
+	margin-top: 8px;
 	min-width: 4em;
 	padding: 8px 8px 8px 0;
 	text-align: right;
@@ -307,6 +300,7 @@ select.loan-input {
 
 .loan-input-rate,
 .loan-input-years {
+	margin-bottom: 8px;
 	margin-right: 0;
 	width: 72px;
 }
@@ -322,6 +316,11 @@ select.loan-input {
 
 fieldset {
 	margin-bottom: 0;
+}
+
+.loans-frequency .loan-label,
+.loans-frequency .frequency-radio {
+	float: right;
 }
 
 .frequency-radio {
@@ -373,12 +372,14 @@ fieldset {
 	color: #8F1F25;
 	font-size: 18px;
 	font-weight: 600;
-	margin-bottom: 8px;
+	margin-bottom: 0;
 	margin-top: 6px;
 	overflow: hidden;
+	padding-left: 2px;
+	padding-right: 4px;
 	transition: color 240ms linear, text-shadow 240ms linear;
 	white-space: nowrap;
-	width: 42px;
+	width: 28px;
 }
 
 .button-remove:active,
@@ -440,6 +441,23 @@ fieldset {
 }
 .address {
 	font-size: 16px;
+}
+
+@media (min-width: 480px) {
+	.loans-frequency .loan-label,
+	.loans-frequency .frequency-radio {
+		float: left;
+	}
+}
+
+@media (min-width: 960px) {
+	.input-group {
+		float: left;
+	}
+
+	.loan-input {
+		padding: 8px 8px 8px 0;
+	}
 }
 
 /* Desktop Nav */
@@ -515,10 +533,9 @@ fieldset {
 	.header-logo {
 		margin-right: 24px;
 	}
-.
+
 	.loan-label {
 		display: block;
-		margin-left: 0;
 		margin-top: 16px;
 	}
 
@@ -536,5 +553,10 @@ fieldset {
 	}
 	.frequency-option-label {
 		font-size: 14px;
+	}
+
+	.results li,
+	.results h3 {
+		text-align: right;
 	}
 }
